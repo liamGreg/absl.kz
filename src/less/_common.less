@@ -1,0 +1,38 @@
+.clear {
+  clear: both;
+}
+
+.inline-block-ul {
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  li {
+    display: inline-block;
+    font-size: @fontsize;
+  }
+}
+
+.button {
+  display: block;
+  line-height: 50px;
+  color: #colors[primary];
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button_primary {
+  background-color: #colors[button-primary];
+  &:hover {
+    background-color: #colors[button-primary-hover];
+  }
+}
+
+.button_default {
+  border: 2px solid #colors[static];
+  height: 46px;
+  &:hover {
+    border-color: #colors[hover];
+    color: #colors[hover-text];
+  }
+}

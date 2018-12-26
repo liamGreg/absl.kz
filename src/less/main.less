@@ -1,5 +1,111 @@
-@import "_part";
+@import "_vars";
+@import "_reset";
+@import "_container";
+@import "_colors";
+@import "_mixins";
+@import "_common";
 
 body {
-  transition: 1s;
+  font-family: 'Exo 2', sans-serif;
+  font-size: @fontsize;
+  color: #colors[text];
+}
+
+.header-top {
+  background-color: #colors[primary];
+  li {
+    line-height: 45px;
+    a {
+      color: #colors[top-menu-link];
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    &.active {
+      a {
+        color: #colors[link-active];
+        text-decoration: none;
+      }
+    }
+  }
+
+  .header-menu {
+    float: left;
+    li {
+      margin-left: 35px;
+    }
+  }
+
+  .header-languages {
+    float: right;
+    li {
+      margin-left: 20px;
+      position: relative;
+      &.active:after {
+        content: '';
+        position: absolute;
+        .arrow('up', 5px, #fff);
+        bottom: 0;
+        left: 50%;
+        margin-left: -5px;
+      }
+    }
+  }
+
+  .header-cabinet {
+    float: right;
+
+    .header-cabinet__key {
+      margin-right: 15px;
+    }
+  }
+
+  .header-delimiter {
+    .delimiter(45px, 15px, #435d7a, 30px);
+    float: right;
+  }
+}
+
+.header {
+  .logo {
+    float: left;
+  }
+
+  .header-delimiter {
+    .delimiter(60px, 60px, #colors[static], 30px);
+    float: left;
+  }
+
+  .header-contacts {
+    float: left;
+
+    .header-phones {
+      font-size: 18px;
+      color: #colors[black];
+    }
+
+    .header-address {
+      margin-top: 15px;
+      img {
+        vertical-align: middle;
+        margin-right: 15px;
+      }
+    }
+  }
+  
+  .header-buttons {
+    float: right;
+
+    .header-request-leave-button {
+      float: left;
+      width: 150px;
+    }
+
+    .header-order-delivery-button {
+      float: left;
+      width: 170px;
+      margin-left: 10px;
+    }
+  }
 }

@@ -1,0 +1,32 @@
+.arrow(@direction, @size, @color) {
+  width: 0;
+  height: 0;
+  border: @size solid transparent;
+  & when (@direction = 'up') {
+    border-bottom: @size solid @color;
+  }
+  & when (@direction = 'down') {
+    border-top: @size solid @color;
+  }
+  & when (@direction = 'left') {
+    border-right: @size solid @color;
+  }
+  & when (@direction = 'right') {
+    border-left: @size solid @color;
+  }
+}
+
+.delimiter(@outer-height, @inner-height, @color, @margin) {
+  margin: 0 @margin;
+  height: @outer-height;
+  position: relative;
+  .delimiter__inner {
+    width: 1px;
+    height: @inner-height;
+    position: absolute;
+    top: 50%;
+    margin-top: -@inner-height/2;
+    background-color: @color;
+    display: inline-block;
+  }
+}

@@ -26,7 +26,7 @@ function serve() {
     });
 
     gulp.watch('src/less/**/*.less', styles);
-    gulp.watch('build/*.html', browserSync.reload);
+    gulp.watch('build/*.html').on('change', browserSync.reload);
 }
 
 gulp.task('serve', serve);
