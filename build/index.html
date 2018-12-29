@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link href="https://fonts.googleapis.com/css?family=Exo+2:300,400,600,700&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/selectize.css"/>
+    <link rel="stylesheet" type="text/css" href="css/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="css/slick-theme.css"/>
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -40,7 +43,13 @@
     <div class="container">
         <div class="logo"><img src="images/logo.png" alt=""></div>
 
-
+        <div class="header-cities">
+            <select class="no-selectize">
+                <option value="">Алматы</option>
+                <option value="">Москва</option>
+                <option value="">Новоибирск</option>
+            </select>
+        </div>
 
         <div class="header-delimiter">
             <div class="delimiter__inner"></div>
@@ -55,11 +64,94 @@
 
         <div class="header-buttons">
             <div class="header-request-leave-button"><a href="" class="button button_default ">Оставить запрос</a></div>
-            <div class="header-order-delivery-button"><a href="" class="button button_primary">Заказать доставку</a></div>
+            <div class="header-order-delivery-button"><a href="" class="button button_primary">Заказать доставку</a>
+            </div>
         </div>
 
         <div class="clear"></div>
     </div>
 </div>
+
+<div class="container">
+    <div class="menu-block">
+        <ul class="menu inline-block-ul">
+            <li><a href="">О компании</a></li>
+            <li><a href="">Услуги</a></li>
+            <li><a href="">Тарифы</a></li>
+            <li><a href="">Контакты</a></li>
+        </ul>
+
+        <div class="calc">
+            <div class="calc-button"></div>
+            <div class="box calc-box">
+                <div class="box-title">Тарифный калькулятор</div>
+                <form action="">
+                    <div class="group">
+                        <select id="calc-from-city">
+                            <option value=""></option>
+                            <option value="1">Алматы</option>
+                            <option value="2">Москва</option>
+                            <option value="3">Новоибирск</option>
+                        </select>
+                        <label for="calc-from-city">Откуда</label>
+                    </div>
+                    <div class="group">
+                        <select id="calc-to-city">
+                            <option value=""></option>
+                            <option value="1">Алматы</option>
+                            <option value="2">Москва</option>
+                            <option value="3">Новоибирск</option>
+                        </select>
+                        <label for="calc-to-city">Куда</label>
+                    </div>
+
+                    <div class="group">
+                        <input type="text" required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Вес груза в кг</label>
+                    </div>
+
+                    <div class="group">
+                        <button class="button button_primary">Рассчитать</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="cargo-status-check-header">
+            <div class="truck"></div>
+            <div class="title">Статус груза</div>
+            <div class="form">
+                <div class="input">
+                    <div class="group">
+                        <input type="text" required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Номер накладной</label>
+                    </div>
+                </div>
+                <button class="cargo-status-check-header-button">
+                </button>
+            </div>
+        </div>
+
+        <div class="clear"></div>
+    </div>
+</div>
+
+<div class="header-slider">
+    <div class="slide-storage">
+        <div class="container">your content</div>
+    </div>
+    <div class="slide-storage">
+        <div class="container">your content 2</div>
+    </div>
+</div>
+
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="js/selectize.min.js"></script>
+<script type="text/javascript" src="js/slick.min.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
 </body>
 </html>

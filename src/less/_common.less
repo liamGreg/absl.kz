@@ -19,6 +19,8 @@
   text-align: center;
   text-decoration: none;
   cursor: pointer;
+  border: none;
+  width: 100%;
 }
 
 .button_primary {
@@ -30,9 +32,21 @@
 
 .button_default {
   border: 2px solid #colors[static];
-  height: 46px;
+  line-height: 46px;
+  background-color: #colors[button-default];
   &:hover {
     border-color: #colors[hover];
     color: #colors[hover-text];
   }
+}
+
+.box {
+  .box-shadow();
+  background-color: #colors[box];
+  padding: 30px;
+}
+
+.box-title {
+  font-weight: bold;
+  color: #colors[box-title];
 }

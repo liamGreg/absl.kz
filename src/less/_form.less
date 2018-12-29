@@ -1,0 +1,155 @@
+.group {
+  position: relative;
+  margin-top: 30px;
+}
+
+input[type=text], input[type=email], input[type=tel], input[type=password] {
+  width: 100%;
+  padding: 7px 0;
+  display: block;
+  border: none;
+  border-bottom: 1px solid #colors[static];
+  background-color: transparent;
+}
+
+input:focus {
+  outline: none;
+}
+
+/* LABEL ======================================= */
+input ~ label {
+  color: #colors[label];
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  top: 5px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+  margin-bottom: 0;
+}
+
+/* active state */
+input:focus ~ label, input:valid ~ label {
+  top: -12px;
+  font-size: 12px;
+  color: #colors[text];
+}
+
+/* BOTTOM BARS ================================= */
+.bar {
+  position: relative;
+  display: block;
+}
+
+.bar:before, .bar:after {
+  content: '';
+  height: 1px;
+  width: 0;
+  bottom: 0;
+  position: absolute;
+  background: #colors[hover];
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+.bar:before {
+  left: 50%;
+}
+
+.bar:after {
+  right: 50%;
+}
+
+/* active state */
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+  width: 50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+  position: absolute;
+  height: 60%;
+  width: 100%;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* active state */
+input:focus ~ .highlight {
+  -webkit-animation: inputHighlighter 0.3s ease;
+  -moz-animation: inputHighlighter 0.3s ease;
+  animation: inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+  from {
+    background: #5264AE;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+
+@-moz-keyframes inputHighlighter {
+  from {
+    background: #5264AE;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+
+@keyframes inputHighlighter {
+  from {
+    background: #5264AE;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+
+.selectize-control {
+  .selectize-input {
+    border-radius: 0;
+    border: 1px solid #colors[static];
+    box-shadow: none;
+    
+    &:hover {
+      border-color: #colors[hover];
+
+      &:after {
+        border-color: #colors[hover];
+      }
+    }
+  }
+
+  &.single .selectize-input {
+    &:after {
+      .arrow('down');
+      border-width: 2px;
+      width: 3px;
+      height: 3px;
+    }
+
+    &.dropdown-active:after {
+      .arrow('up');
+      border-width: 2px;
+      width: 3px;
+      height: 3px;
+      margin-top: -1px;
+    }
+  }
+}
+
+select ~ label {
+  position: absolute;
+  top: -22px;
+}
