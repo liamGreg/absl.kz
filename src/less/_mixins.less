@@ -57,3 +57,20 @@
 .box-shadow {
   box-shadow: 0 2px 12px 1px #colors[shadow];
 }
+
+.button-directed(@direction) {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 50px;
+  width: 50px;
+  &:after {
+    content: '';
+    position: absolute;
+    .arrow(@direction);
+    top: 50%;
+    left: 50%;
+    margin-top: -5px;
+    margin-left: -5px;
+  }
+}

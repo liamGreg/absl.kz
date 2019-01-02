@@ -21,6 +21,7 @@
   cursor: pointer;
   border: none;
   width: 100%;
+  transition: @transition-duration;
 }
 
 .button_primary {
@@ -49,4 +50,43 @@
 .box-title {
   font-weight: bold;
   color: #colors[box-title];
+}
+
+p {
+  line-height: 21px;
+  &:first-of-type {
+    margin-top: 0;
+  }
+}
+
+.section-title {
+  color: #colors[box-title];
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+
+.button__next {
+  .button-directed('right');
+}
+
+.button__prev {
+  .button-directed('left');
+}
+
+.mfp-bg {
+  background-color: #colors[primary];
+  opacity: .4;
+}
+
+.mfp-close {
+  font-size: 44px;
+  right: -30px !important;
+  color: #122e4e !important;
+  opacity: .3;
+  font-weight: 900;
+}
+
+.mfp-figure:after {
+  .box-shadow();
 }

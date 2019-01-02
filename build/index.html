@@ -4,12 +4,89 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link href="https://fonts.googleapis.com/css?family=Exo+2:300,400,600,700&amp;subset=cyrillic" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/selectize.css"/>
-    <link rel="stylesheet" type="text/css" href="css/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="css/slick-theme.css"/>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/libs.css"/>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
+<header>
+    <div class="container">
+        <div class="header-logo">
+            <a href=""><img src="img/header-logo.png" alt=""></a>
+        </div>
+
+        <ul class="menu inline-block-ul">
+            <li><a href="">О компании</a></li>
+            <li><a href="">Услуги</a></li>
+            <li><a href="">Тарифы</a></li>
+            <li><a href="">Контакты</a></li>
+        </ul>
+
+        <div class="header-right">
+            <div class="header-cabinet">
+                <div class="header-cabinet__key"><img src="img/key-dark.png" alt=""></div>
+                <div class="header-cabinet__link"><a href="">Личный кабинет</a></div>
+            </div>
+
+            <div class="cargo-status-check-header">
+                <div class="truck"></div>
+                <div class="title csc-title"><span>Статус груза</span></div>
+                <div class="form csc-form">
+                    <div class="input">
+                        <div class="group">
+                            <input type="text" required class="csc-input">
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Номер накладной</label>
+                        </div>
+                    </div>
+                    <button class="cargo-status-check-header-button csc-button">
+                    </button>
+                </div>
+            </div>
+
+            <div class="calc">
+                <div class="calc-button drop-button"></div>
+                <div class="box calc-box">
+                    <div class="box-title">Тарифный калькулятор</div>
+                    <form action="">
+                        <div class="group">
+                            <select id="calc-from-city">
+                                <option value=""></option>
+                                <option value="1">Алматы</option>
+                                <option value="2">Москва</option>
+                                <option value="3">Новоибирск</option>
+                            </select>
+                            <label for="calc-from-city">Откуда</label>
+                        </div>
+                        <div class="group">
+                            <select id="calc-to-city">
+                                <option value=""></option>
+                                <option value="1">Алматы</option>
+                                <option value="2">Москва</option>
+                                <option value="3">Новоибирск</option>
+                            </select>
+                            <label for="calc-to-city">Куда</label>
+                        </div>
+
+                        <div class="group">
+                            <input type="text" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Вес груза в кг</label>
+                        </div>
+
+                        <div class="group">
+                            <button class="button button_primary">Рассчитать</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="clear"></div>
+    </div>
+</header>
+
 <div class="header-top">
     <div class="container">
         <ul class="header-menu inline-block-ul">
@@ -20,20 +97,22 @@
             <li><a href="">Франшиза</a></li>
         </ul>
 
-        <ul class="header-languages inline-block-ul">
-            <li class="active"><a href="">RUS</a></li>
-            <li><a href="">KAZ</a></li>
-            <li><a href="">ENG</a></li>
-        </ul>
+        <div class="header-top-right">
+            <div class="header-cabinet">
+                <div class="header-cabinet__key"><img src="img/key.png" alt=""></div>
+                <div class="header-cabinet__link"><a href="">Личный кабинет</a></div>
+            </div>
 
-        <div class="header-delimiter">
-            <div class="delimiter__inner"></div>
+            <div class="header-delimiter">
+                <div class="delimiter__inner"></div>
+            </div>
+
+            <ul class="header-languages inline-block-ul">
+                <li class="active"><a href="">RUS</a></li>
+                <li><a href="">KAZ</a></li>
+                <li><a href="">ENG</a></li>
+            </ul>
         </div>
-
-        <ul class="header-cabinet inline-block-ul">
-            <li class="header-cabinet__key"><img src="images/key.png" alt=""></li>
-            <li><a href="">Личный кабинет</a></li>
-        </ul>
 
         <div class="clear"></div>
     </div>
@@ -41,7 +120,7 @@
 
 <div class="header">
     <div class="container">
-        <div class="logo"><img src="images/logo.png" alt=""></div>
+        <div class="logo"><img src="img/logo.png" alt=""></div>
 
         <div class="header-cities">
             <select class="no-selectize">
@@ -58,7 +137,7 @@
         <div class="header-contacts">
             <div class="header-phones">+7 (727) 279-90-37 / 246 84 85</div>
             <div class="header-address">
-                <img src="images/place-marker.png" alt="">г. Алматы, пр. Райымбека, 165а
+                <img src="img/place-marker.png" alt="">г. Алматы, пр. Райымбека, 165а
             </div>
         </div>
 
@@ -72,86 +151,453 @@
     </div>
 </div>
 
-<div class="container">
-    <div class="menu-block">
-        <ul class="menu inline-block-ul">
-            <li><a href="">О компании</a></li>
-            <li><a href="">Услуги</a></li>
-            <li><a href="">Тарифы</a></li>
-            <li><a href="">Контакты</a></li>
-        </ul>
+<div class="menu-block">
+    <div class="container">
+        <div class="menu-block-inner">
+            <ul class="menu inline-block-ul">
+                <li><a href="">О компании</a></li>
+                <li><a href="">Услуги</a></li>
+                <li><a href="">Тарифы</a></li>
+                <li><a href="">Контакты</a></li>
+            </ul>
 
-        <div class="calc">
-            <div class="calc-button"></div>
-            <div class="box calc-box">
-                <div class="box-title">Тарифный калькулятор</div>
-                <form action="">
-                    <div class="group">
-                        <select id="calc-from-city">
-                            <option value=""></option>
-                            <option value="1">Алматы</option>
-                            <option value="2">Москва</option>
-                            <option value="3">Новоибирск</option>
-                        </select>
-                        <label for="calc-from-city">Откуда</label>
-                    </div>
-                    <div class="group">
-                        <select id="calc-to-city">
-                            <option value=""></option>
-                            <option value="1">Алматы</option>
-                            <option value="2">Москва</option>
-                            <option value="3">Новоибирск</option>
-                        </select>
-                        <label for="calc-to-city">Куда</label>
-                    </div>
-
-                    <div class="group">
-                        <input type="text" required>
-                        <span class="highlight"></span>
-                        <span class="bar"></span>
-                        <label>Вес груза в кг</label>
-                    </div>
-
-                    <div class="group">
-                        <button class="button button_primary">Рассчитать</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-
-        <div class="cargo-status-check-header">
-            <div class="truck"></div>
-            <div class="title">Статус груза</div>
-            <div class="form">
-                <div class="input">
-                    <div class="group">
-                        <input type="text" required>
-                        <span class="highlight"></span>
-                        <span class="bar"></span>
-                        <label>Номер накладной</label>
+            <div class="menu-block-right">
+                <div class="cargo-status-check-header">
+                    <div class="truck"></div>
+                    <div class="title">Статус груза</div>
+                    <div class="form">
+                        <div class="input">
+                            <div class="group">
+                                <input type="text" required>
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label>Номер накладной</label>
+                            </div>
+                        </div>
+                        <button class="cargo-status-check-header-button">
+                        </button>
                     </div>
                 </div>
-                <button class="cargo-status-check-header-button">
-                </button>
-            </div>
-        </div>
 
-        <div class="clear"></div>
+                <div class="calc">
+                    <div class="calc-button drop-button"></div>
+                    <div class="box calc-box">
+                        <div class="box-title">Тарифный калькулятор</div>
+                        <form action="">
+                            <div class="group">
+                                <select id="calc-from-city">
+                                    <option value=""></option>
+                                    <option value="1">Алматы</option>
+                                    <option value="2">Москва</option>
+                                    <option value="3">Новоибирск</option>
+                                </select>
+                                <label for="calc-from-city">Откуда</label>
+                            </div>
+                            <div class="group">
+                                <select id="calc-to-city">
+                                    <option value=""></option>
+                                    <option value="1">Алматы</option>
+                                    <option value="2">Москва</option>
+                                    <option value="3">Новоибирск</option>
+                                </select>
+                                <label for="calc-to-city">Куда</label>
+                            </div>
+
+                            <div class="group">
+                                <input type="text" required>
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label>Вес груза в кг</label>
+                            </div>
+
+                            <div class="group">
+                                <button class="button button_primary">Рассчитать</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
     </div>
 </div>
 
 <div class="header-slider">
     <div class="slide-storage">
-        <div class="container">your content</div>
+        <div class="container">
+            <div class="slide-storage-title">Предлагаем услугу</div>
+            <div class="slide-storage-description">
+                <span class="slide-storage-highlight">Хранение грузов</span> и <br>
+                ТМЦ на нашем складе -<br>
+                <span class="slide-storage-highlight">от 70 ТНГ</span> за 1 м3
+            </div>
+        </div>
     </div>
     <div class="slide-storage">
-        <div class="container">your content 2</div>
+        <div class="container">
+            <div class="slide-storage-title">Предлагаем услугу</div>
+            <div class="slide-storage-description">
+                <span class="slide-storage-highlight">Хранение грузов</span> и <br>
+                ТМЦ на нашем складе -<br>
+                <span class="slide-storage-highlight">от 70 ТНГ</span> за 1 м3
+            </div>
+        </div>
     </div>
 </div>
 
-<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
-<script type="text/javascript" src="js/selectize.min.js"></script>
-<script type="text/javascript" src="js/slick.min.js"></script>
+<section class="section our-services-section">
+    <div class="container">
+        <div class="section-title">Наши услуги</div>
+
+        <div class="services-switcher">
+            <ul class="ss-list">
+                <li class="active"><a class="ss-auto" href=""><span>Автоперевозки</span></a></li>
+                <li><a class="ss-freeze" href=""><span>Перевозки рефрежиратором</span></a></li>
+                <li><a class="ss-train" href=""><span>Ж/Д перевозки</span></a></li>
+                <li><a class="ss-sea" href=""><span>Морские перевозки</span></a></li>
+                <li><a class="ss-air" href=""><span>Авиаперевозки</span></a></li>
+            </ul>
+
+            <div class="ss-content">
+                <div class="active">
+                    <img src="img/ss-freeze.png" alt="">
+                    <div class="ss-info">
+                        <div class="ss-title">Автоперевозки</div>
+
+                        <div class="ss-description">
+                            <p>Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в
+                                постели превратился в страшное насекомое. Лежа на панцирнотвердой спине, он видел,
+                                стоило ему приподнять голову, свой коричневый, выпуклый, разделенный дугообразными
+                                чешуйками живот, на верхушке которого еле держалось готовое вот-вот окончательно сползти
+                                одеяло.</p>
+                        </div>
+
+                        <div class="button button_primary button__next ss-link"></div>
+                    </div>
+                </div>
+                <div>
+                    <img src="img/ss-freeze.png" alt="">
+                    <div class="ss-info">
+                        <div class="ss-title">Перевозки рефрижератором</div>
+
+                        <div class="ss-description">
+                            <p>Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в
+                                постели превратился в страшное насекомое. Лежа на панцирнотвердой спине, он видел,
+                                стоило ему приподнять голову, свой коричневый, выпуклый, разделенный дугообразными
+                                чешуйками живот, на верхушке которого еле держалось готовое вот-вот окончательно сползти
+                                одеяло.</p>
+                        </div>
+
+                        <div class="button button_primary button__next ss-link"></div>
+                    </div>
+                </div>
+                <div>
+                    <img src="img/ss-freeze.png" alt="">
+                    <div class="ss-info">
+                        <div class="ss-title">Ж/Д перевозки</div>
+
+                        <div class="ss-description">
+                            <p>Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в
+                                постели превратился в страшное насекомое. Лежа на панцирнотвердой спине, он видел,
+                                стоило ему приподнять голову, свой коричневый, выпуклый, разделенный дугообразными
+                                чешуйками живот, на верхушке которого еле держалось готовое вот-вот окончательно сползти
+                                одеяло.</p>
+                        </div>
+
+                        <div class="button button_primary button__next ss-link"></div>
+                    </div>
+                </div>
+                <div>
+                    <img src="img/ss-freeze.png" alt="">
+                    <div class="ss-info">
+                        <div class="ss-title">Морские перевозки</div>
+
+                        <div class="ss-description">
+                            <p>Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в
+                                постели превратился в страшное насекомое. Лежа на панцирнотвердой спине, он видел,
+                                стоило ему приподнять голову, свой коричневый, выпуклый, разделенный дугообразными
+                                чешуйками живот, на верхушке которого еле держалось готовое вот-вот окончательно сползти
+                                одеяло.</p>
+                        </div>
+
+                        <div class="button button_primary button__next ss-link"></div>
+                    </div>
+                </div>
+                <div>
+                    <img src="img/ss-freeze.png" alt="">
+                    <div class="ss-info">
+                        <div class="ss-title">Авиаперевозки</div>
+
+                        <div class="ss-description">
+                            <p>Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в
+                                постели превратился в страшное насекомое. Лежа на панцирнотвердой спине, он видел,
+                                стоило ему приподнять голову, свой коричневый, выпуклый, разделенный дугообразными
+                                чешуйками живот, на верхушке которого еле держалось готовое вот-вот окончательно сползти
+                                одеяло.</p>
+                        </div>
+
+                        <div class="button button_primary button__next ss-link"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="about-section">
+    <div class="container">
+        <div class="box">
+            <div class="section-title">О компании</div>
+
+            <div class="about-info">
+                <div class="about-short">
+                    <p>Наша компания в Республике Казахстан оказывает услуги по доставке грузов с 2007 года.</p>
+                    <p>Мы можем доставить груз любого характера и объема по нужному направлению любым видом
+                        транспорта.</p>
+                    <p>Главной ценностью нашей компании являются наши клиенты и их интересы.</p>
+                    <p>Высокое качество услуг по приемлемым ценам является основным приоритетом в нашей работе.</p>
+                    <p>Девиз нашей компании – <b>Always Best Solutions - Всегда Лучшие Решения</b>.</p>
+                    <p>Это означает, что мы всегда разрабатываем и предлагаем нашим клиентам наиболее оптимальные
+                        решения по доставке грузов (в соотношении цена / скорость / качество).</p>
+
+                    <div class="about-more">
+                        <a class="button button_default" href="">Читать подробнее</a>
+                    </div>
+                </div>
+
+                <div class="about-advantages">
+                    <ul>
+                        <li><img src="img/adv-shipping.png" alt="">
+                            <div>Минимальные сроки доставки</div>
+                        </li>
+                        <li><img src="img/adv-payment.png" alt="">
+                            <div>Гибкая ценовая политика</div>
+                        </li>
+                        <li><img src="img/adv-agency.png" alt="">
+                            <div>Широкая агентская сеть</div>
+                        </li>
+                        <li><img src="img/adv-support.png" alt="">
+                            <div>Индивидуальный подход к каждому клиенту</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="clear"></div>
+            </div>
+
+            <div class="about-countries">
+                <div class="about-countries__title">Мы работаем в таких странах</div>
+
+                <ul class="ac-list">
+                    <li>
+                        <img class="ac-flag" src="img/flag-by.png" alt="">
+                        <div class="ac-title">Белорусия</div>
+                        <div class="ac-description">Доставка грузов из Белорусии</div>
+                        <a class="button_primary button__next ac-link" href=""></a>
+                    </li>
+                    <li>
+                        <img class="ac-flag" src="img/flag-by.png" alt="">
+                        <div class="ac-title">Белорусия</div>
+                        <div class="ac-description">Доставка грузов из Белорусии</div>
+                        <a class="button_primary button__next ac-link" href=""></a>
+                    </li>
+                    <li>
+                        <img class="ac-flag" src="img/flag-by.png" alt="">
+                        <div class="ac-title">Белорусия</div>
+                        <div class="ac-description">Доставка грузов из Белорусии</div>
+                        <a class="button_primary button__next ac-link" href=""></a>
+                    </li>
+                    <li>
+                        <img class="ac-flag" src="img/flag-by.png" alt="">
+                        <div class="ac-title">Белорусия</div>
+                        <div class="ac-description">Доставка грузов из Белорусии</div>
+                        <a class="button_primary button__next ac-link" href=""></a>
+                    </li>
+                    <li>
+                        <img class="ac-flag" src="img/flag-by.png" alt="">
+                        <div class="ac-title">Белорусия</div>
+                        <div class="ac-description">Доставка грузов из Белорусии</div>
+                        <a class="button_primary button__next ac-link" href=""></a>
+                    </li>
+                    <li>
+                        <img class="ac-flag" src="img/flag-by.png" alt="">
+                        <div class="ac-title">Белорусия</div>
+                        <div class="ac-description">Доставка грузов из Белорусии</div>
+                        <a class="button_primary button__next ac-link" href=""></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="thanks-section">
+    <div class="container">
+        <div class="section-title">
+            Благодарственные письма
+            <div class="thanks-slider-arrows"></div>
+        </div>
+
+        <div class="thanks-slider">
+            <div class="thanks-slide">
+                <div class="thanks-doc">
+                    <img src="img/thanks-doc.png" alt="">
+
+                    <div class="thanks-doc-info">
+                        <div class="thanks-doc-info__title">Название компании</div>
+                        <div class="thanks-doc-info__description">Благодарность от компании за 5 лет успешного
+                            сотрудничества и приложенных усилий по работе
+                        </div>
+                        <div class="thanks-doc-info__link">
+                            <a href="img/thanks-doc.png" class="button button_default">Увеличить</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="thanks-slide">
+                <div class="thanks-doc">
+                    <img src="img/thanks-doc.png" alt="">
+
+                    <div class="thanks-doc-info">
+                        <div class="thanks-doc-info__title">Название компании</div>
+                        <div class="thanks-doc-info__description">Благодарность от компании за 5 лет успешного
+                            сотрудничества и приложенных усилий по работе
+                        </div>
+                        <div class="thanks-doc-info__link">
+                            <a href="img/thanks-doc.png" class="button button_default">Увеличить</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="thanks-slide">
+                <div class="thanks-doc">
+                    <img src="img/thanks-doc.png" alt="">
+
+                    <div class="thanks-doc-info">
+                        <div class="thanks-doc-info__title">Название компании</div>
+                        <div class="thanks-doc-info__description">Благодарность от компании за 5 лет успешного
+                            сотрудничества и приложенных усилий по работе
+                        </div>
+                        <div class="thanks-doc-info__link">
+                            <a href="img/thanks-doc.png" class="button button_default">Увеличить</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="thanks-slide">
+                <div class="thanks-doc">
+                    <img src="img/thanks-doc.png" alt="">
+
+                    <div class="thanks-doc-info">
+                        <div class="thanks-doc-info__title">Название компании</div>
+                        <div class="thanks-doc-info__description">Благодарность от компании за 5 лет успешного
+                            сотрудничества и приложенных усилий по работе
+                        </div>
+                        <div class="thanks-doc-info__link">
+                            <a href="img/thanks-doc.png" class="button button_default">Увеличить</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="thanks-slide">
+                <div class="thanks-doc">
+                    <img src="img/thanks-doc.png" alt="">
+
+                    <div class="thanks-doc-info">
+                        <div class="thanks-doc-info__title">Название компании</div>
+                        <div class="thanks-doc-info__description">Благодарность от компании за 5 лет успешного
+                            сотрудничества и приложенных усилий по работе
+                        </div>
+                        <div class="thanks-doc-info__link">
+                            <a href="img/thanks-doc.png" class="button button_default">Увеличить</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-menu">
+            <div class="footer-menu__title">Основное меню</div>
+            <ul>
+                <li><a href="">Заказать доставку</a></li>
+                <li><a href="">Статус груза</a></li>
+                <li><a href="">О компании</a></li>
+                <li><a href="">Услуги</a></li>
+                <li><a href="">Тарифы</a></li>
+                <li><a href="">Контакты</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-menu">
+            <div class="footer-menu__title">Полезная информация</div>
+            <ul>
+                <li><a href="">Как отправить груз</a></li>
+                <li><a href="">Вакансии</a></li>
+                <li><a href="">Вопросы</a></li>
+                <li><a href="">Образцы документов</a></li>
+                <li><a href="">Франшиза</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-menu">
+            <div class="footer-menu__title">Наши услуги</div>
+            <ul>
+                <li><a href="">Автоперевозка</a></li>
+                <li><a href="">Перевозки рефрижератором</a></li>
+                <li><a href="">Ж/Д перевозки</a></li>
+                <li><a href="">Морские перевозки</a></li>
+                <li><a href="">Авиаперевозки</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-contacts">
+            <table>
+                <tr>
+                    <td><img src="img/footer-phone.png" alt=""></td>
+                    <td>
+                        <div><a href="tel:+7 (727) 279 90 37">+7 (727) 279 90 37</a></div>
+                        <div><a href="tel:+7 (727) 246 84 85">+7 (727) 246 84 85</a></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src="img/footer-email.png" alt=""></td>
+                    <td><a href="mailto:absl@absl.kz">absl@absl.kz</a></td>
+                </tr>
+                <tr>
+                    <td><img src="img/footer-address.png" alt=""></td>
+                    <td>г. Алматы, пр. Райымбека, 165а</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="clear"></div>
+
+        <div class="footer-bottom">
+            <div class="footer-logo">
+                <img src="img/logo.png" alt="">
+            </div>
+
+            <div class="footer-copyright">2018 г. Транспортная компания “ABS Group”. Все права защищены</div>
+
+            <div class="footer-socials">
+                <ul class="inline-block-ul">
+                    <li><a href=""><img src="img/footer-insta.png" alt=""></a></li>
+                    <li><a href=""><img src="img/footer-fb.png" alt=""></a></li>
+                    <li><a href=""><img src="img/footer-vk.png" alt=""></a></li>
+                    <li><a href=""><img src="img/footer-tw.png" alt=""></a></li>
+                </ul>
+            </div>
+
+            <div class="clear"></div>
+        </div>
+    </div>
+</footer>
+
+<script type="text/javascript" src="js/libs.min.js"></script>
 <script type="text/javascript" src="js/common.js"></script>
 </body>
 </html>
