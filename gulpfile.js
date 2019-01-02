@@ -9,7 +9,8 @@ const gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     imagemin = require('gulp-imagemin'),
     pngquant = require('imagemin-pngquant'),
-    cache = require('gulp-cache');
+    cache = require('gulp-cache'),
+    pug = require('gulp-pug');
 
 function styles() {
     return gulp.src(['src/less/**/*.less', '!src/less/**/_*.less', '!src/libs/*'])
@@ -35,6 +36,13 @@ function scripts() {
         .pipe(gulp.dest('build/js'));
 }
 
+function views() {
+    return gulp.src('src/pug/*.pug')
+        .pipe(pug())
+        .pipe(gulp.dest('build'))
+        .pipe(browserSync.stream());
+}
+
 function images() {
     return gulp.src('src/img/**/*')
         .pipe(cache(imagemin({
@@ -54,7 +62,7 @@ function serve() {
     });
 
     gulp.watch('src/less/**/*.less', styles);
-    gulp.watch('build/*.html').on('change', browserSync.reload);
+    gulp.watch('src/pug/**/*.pug', views);
     gulp.watch('build/js/**/*.js').on('change', browserSync.reload);
     gulp.watch('src/img/**/*', images);
 }
@@ -63,6 +71,7 @@ gulp.task('serve', serve);
 gulp.task('styles', styles);
 gulp.task('scripts', scripts);
 gulp.task('images', images);
-gulp.task('clear', function() {
+gulp.task('views', views);
+gulp.task('clear', function () {
     return cache.clearAll();
 });

@@ -1,0 +1,26 @@
+mixin menu(className, items)
+  ul(class=className)
+    each val, index in items.links
+      li
+        a(href=val)= items.titles[index]
+
+mixin header-cabinet(theme)
+  .header-cabinet
+    .header-cabinet__key
+      img(src=imgPath + 'key-' + theme + '.png')
+    .header-cabinet__link
+      a Личный кабинет
+
+mixin cargo-status-check(flexible)
+  .cargo-status-check-header
+    .truck
+    .title(class=flexible ? 'csc-title' : '')
+      span Статус груза
+    form(class='form' class=flexible ? 'csc-form' : '')
+      .input
+        .group
+          input(class=flexible ? 'csc-input' : '')
+          span.highlight
+          span.bar
+          label Номер накладной
+      button(class='cargo-status-check-header-button' class=flexible ? 'csc-button' : '')

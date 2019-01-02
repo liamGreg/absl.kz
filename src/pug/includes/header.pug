@@ -1,0 +1,12 @@
+header
+  .container
+    .header-logo
+      a
+        img(src=imgPath + 'header-logo.png')
+
+    +menu('menu inline-block-ul', menu)
+
+    .header-right
+      +header-cabinet('dark')
+
+      +cargo-status-check(true)
