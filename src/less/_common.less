@@ -2,6 +2,28 @@
   clear: both;
 }
 
+.content {
+  ul {
+    list-style-type: none;
+    padding-left: 10px;
+    position: relative;
+    margin: 15px 0;
+
+    li {
+      line-height: 1.5;
+      margin-bottom: 10px;
+      &:before {
+        content: '•';
+        position: absolute;
+        color: #colors[button-primary];
+        display: inline-block;
+        width: 4px;
+        left: 3px;
+      }
+    }
+  }
+}
+
 .inline-block-ul {
   margin: 0;
   padding: 0;
@@ -42,7 +64,6 @@
 }
 
 .box {
-  .box-shadow();
   background-color: #colors[box];
   padding: 30px;
 }
@@ -54,8 +75,14 @@
 
 p {
   line-height: 21px;
+  margin: 15px 0;
   &:first-of-type {
     margin-top: 0;
+  }
+
+  &.p-title {
+    color: #colors[primary];
+    font-weight: bold;
   }
 }
 
@@ -63,7 +90,7 @@ p {
   color: #colors[box-title];
   font-size: 30px;
   font-weight: bold;
-  margin-bottom: 50px;
+  margin-bottom: 45px;
 }
 
 .button__next {
@@ -89,4 +116,71 @@ p {
 
 .mfp-figure:after {
   .box-shadow();
+}
+
+.accordeon {
+  border: 2px solid #colors[static];
+  margin: 20px;
+
+  .accordeon-title {
+    padding: 15px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #colors[primary];
+    position: relative;
+    cursor: pointer;
+    transition: @transition-duration;
+
+    &:after {
+      content: '';
+      position: absolute;
+      .arrow('down');
+      top: 20px;
+      right: 20px;
+      transition: @transition-duration;
+    }
+
+    &.active {
+      color: #colors[hover-text];
+      
+      &:after {
+        border-color: #colors[hover-text];
+        transform: rotate(-135deg);
+      }
+    }
+  }
+
+  .accordeon-description {
+    max-height: 0;
+    overflow: hidden;
+    transition: .5s;
+
+    &.active {
+      max-height: 1000px;
+    }
+
+    .accordeon-description-inner {
+      padding: 15px 20px 20px 20px;
+    }
+  }
+}
+
+.side-form {
+  padding: 20px 0;
+}
+
+.form-notice {
+  line-height: 1.5;
+}
+
+.form-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #colors[primary];
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #colors[static];
+  margin: 20px 0;
 }

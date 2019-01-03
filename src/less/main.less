@@ -30,7 +30,7 @@ header {
 
   &.header_hidden {
   }
-  
+
   .header-logo {
     float: left;
     padding-top: 9px;
@@ -92,7 +92,7 @@ header {
       vertical-align: middle;
     }
   }
-  
+
   .header-cabinet__link {
     float: left;
     line-height: 45px;
@@ -176,17 +176,21 @@ header {
     float: left;
     margin-left: 100px;
     margin-top: 55px;
-    select {
-      border: none;
-      border-bottom: 1px dashed;
-      text-transform: uppercase;
-      padding: 5px 15px 5px 0;
-      color: #colors[hover-text];
-      background: transparent;
-      appearance: none;
-      position: relative;
-      background: url("@{images-dir}arrow-down.png") no-repeat right center;
-      font-weight: 600;
+
+    .group {
+      margin-top: 0;
+      select {
+        border: none;
+        border-bottom: 1px dashed;
+        text-transform: uppercase;
+        padding: 5px 15px 5px 0;
+        color: #colors[hover-text];
+        background: transparent;
+        appearance: none;
+        position: relative;
+        background: url("@{images-dir}arrow-down.png") no-repeat right center;
+        font-weight: 600;
+      }
     }
   }
 
@@ -230,7 +234,6 @@ header {
     }
   }
 }
-
 
 .menu {
   float: left;
@@ -344,7 +347,6 @@ header {
     &:hover, &.active {
       background-image: url("@{images-dir}calc-active.png");
 
-
     }
     &.drop-button__active {
       &:after {
@@ -359,8 +361,9 @@ header {
   }
 
   .calc-box {
+    .box-shadow();
     position: absolute;
-    width: 340px;
+    width: 310px;
     right: 0;
     top: 75px;
     display: none;
@@ -381,7 +384,7 @@ header {
 }
 
 .menu-block {
-  margin-top: 30px;
+  margin: 30px 0;
   z-index: 1;
   position: relative;
   .menu-block-inner {
@@ -394,7 +397,7 @@ header {
 }
 
 .header-slider {
-  margin-top: -30px;
+  margin-top: -60px;
   .slick-slide {
     height: 370px;
   }
@@ -497,6 +500,7 @@ header {
           font-weight: 600;
           color: #colors[hover-text];
           transition: @transition-duration;
+          cursor: pointer;
           span {
             border-bottom: 1px dashed #colors[grey];
             padding-bottom: 5px;
@@ -797,7 +801,7 @@ header {
             text-align: center;
             margin-top: 140px;
           }
-          
+
           .thanks-doc-info__description {
             font-size: 13px;
             color: #colors[top-menu-link];
@@ -813,7 +817,7 @@ header {
             .button {
               background-color: transparent;
               color: #colors[static];
-              
+
               &:hover {
                 color: #colors[hover];
               }
@@ -840,7 +844,7 @@ footer {
   margin-top: 80px;
   padding: 50px 0 30px 0;
   background-color: #colors[primary];
-  
+
   .footer-menu {
     width: 300px;
     float: left;
@@ -862,7 +866,7 @@ footer {
         a {
           color: #colors[top-menu-link];
           transition: @transition-duration;
-          
+
           &:hover {
             text-decoration: none;
             color: #colors[white];
@@ -871,7 +875,7 @@ footer {
       }
     }
   }
-  
+
   .footer-contacts {
     float: left;
 
@@ -886,7 +890,7 @@ footer {
         padding-bottom: 20px;
         vertical-align: top;
       }
-      
+
       a {
         color: #colors[white];
         text-decoration: none;
@@ -911,7 +915,7 @@ footer {
 
   .footer-bottom {
     margin-top: 50px;
-    
+
     .footer-logo {
       float: left;
       img {
@@ -936,4 +940,36 @@ footer {
       }
     }
   }
+}
+
+.breadcrumbs {
+  margin-bottom: 30px;
+  li {
+    padding-left: 30px;
+    background: url("@{images-dir}crumbs-delimiter.png") 8px 8px no-repeat;
+
+    &:first-of-type {
+      padding: 0;
+      background: none;
+    }
+
+    a {
+      color: #colors[primary];
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.vacancies-box {
+  max-width: 870px;
+  box-sizing: border-box;
+  float: left;
+}
+
+.vacancies-form {
+  float: left;
+  width: 270px;
+  margin-left: 30px;
 }

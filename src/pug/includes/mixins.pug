@@ -1,15 +1,36 @@
-mixin menu(className, items)
+mixin select(items, labelText, prop=true, className)
+  .group.group-select
+    select(class=className)
+      if prop
+        option
+      each val, index in items
+        option(value=index)= val
+    if labelText
+      label= labelText
+
+mixin list(items)
+  ul
+    each val, index in items
+      li= val
+
+mixin menu(items, className)
   ul(class=className)
     each val, index in items.links
-      li
-        a(href=val)= items.titles[index]
+      li: a(href=val + '.html')= items.titles[index]
 
-mixin header-cabinet(theme)
+mixin input(labelText, inputClass = '')
+  .group
+    input(class=inputClass type='text' required)
+    span.highlight
+    span.bar
+    label= labelText
+
+mixin header-cabinet(theme='')
   .header-cabinet
     .header-cabinet__key
-      img(src=imgPath + 'key-' + theme + '.png')
+      img(src=imgPath + 'key' + (theme ? ('-' + theme) : '')  + '.png')
     .header-cabinet__link
-      a Личный кабинет
+      a(href='') Личный кабинет
 
 mixin cargo-status-check(flexible)
   .cargo-status-check-header
@@ -18,9 +39,25 @@ mixin cargo-status-check(flexible)
       span Статус груза
     form(class='form' class=flexible ? 'csc-form' : '')
       .input
-        .group
-          input(class=flexible ? 'csc-input' : '')
-          span.highlight
-          span.bar
-          label Номер накладной
+        +input('Номер накладной', flexible ? 'csc-input' : '')
       button(class='cargo-status-check-header-button' class=flexible ? 'csc-button' : '')
+
+mixin calc()
+  .calc
+    .calc-button.drop-button
+    .box.calc-box
+      .box-title Тарифный калькулятор
+      form
+        +select(cities, 'Откуда', true)
+        +select(cities, 'Куда', true)
+        +input('Вес груза в кг')
+        +submit-button('Рассчитать')
+
+mixin breadcrumbs(title)
+  ul(class='breadcrumbs inline-block-ul')
+    li: a(href='/') Главная
+    li= title
+
+mixin submit-button(text)
+  .group
+    button(class='button button_primary')= text

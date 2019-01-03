@@ -78,3 +78,11 @@ $document.on('click', '.ss-list a', function (e) {
 
     return false;
 });
+
+$document.on('click', '.accordeon-title', function () {
+    var $this = $(this);
+
+    $this.toggleClass('active').next().toggleClass('active');
+
+    return false;
+});

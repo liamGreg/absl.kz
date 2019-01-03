@@ -1,8 +1,203 @@
-include includes/vars
-include includes/mixins
+include includes/header-all
 
-doctype html
-html
-  include includes/head
-  body
-    include includes/header
+
+.header-slider
+  .slide-storage
+    .container
+      .slide-storage-title Предлагаем услугу
+
+      .slide-storage-description
+        span.slide-storage-highlight Хранение грузов
+        |
+        | и
+        br
+        | ТМЦ на нашем складе -
+        br
+        span.slide-storage-highlight от 70 ТНГ
+        |
+        | за 1 м3
+
+  .slide-storage
+    .container
+      .slide-storage-title Предлагаем услугу
+
+      .slide-storage-description
+        span.slide-storage-highlight Хранение грузов
+        |
+        | и
+        br
+        | ТМЦ на нашем складе -
+        br
+        span.slide-storage-highlight от 70 ТНГ
+        |
+        | за 1 м3
+
+
+section(class='section our-services-section')
+  .container
+    .section-title Наши услуги
+
+    .services-switcher
+      ul.ss-list
+        li.active: a.ss-auto: span Автоперевозки
+        li: a.ss-freeze: span Перевозки рефрежиратором
+        li: a.ss-train: span Ж/Д перевозки
+        li: a.ss-sea: span Морские перевозки
+        li: a.ss-air: span Авиаперевозки
+
+      .ss-content
+        .active
+          img(src=imgPath + 'ss-freeze.png')
+          .ss-info
+            .ss-title Автоперевозки
+            .ss-description: p Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился в страшное насекомое. Лежа на панцирнотвердой спине, он видел, стоило ему приподнять голову, свой коричневый, выпуклый, разделенный дугообразными чешуйками живот, на верхушке которого еле держалось готовое вот-вот окончательно сползти одеяло.
+            a(class='button button_primary button__next ss-link')
+
+        div
+          img(src=imgPath + 'ss-freeze.png')
+          .ss-info
+            .ss-title Перевозки рефрижератором
+            .ss-description: p Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился в страшное насекомое. Лежа на панцирнотвердой спине, он видел, стоило ему приподнять голову, свой коричневый, выпуклый, разделенный дугообразными чешуйками живот, на верхушке которого еле держалось готовое вот-вот окончательно сползти одеяло.
+            a(class='button button_primary button__next ss-link')
+
+        div
+          img(src=imgPath + 'ss-freeze.png')
+          .ss-info
+            .ss-title Ж/Д перевозки
+            .ss-description: p Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился в страшное насекомое. Лежа на панцирнотвердой спине, он видел, стоило ему приподнять голову, свой коричневый, выпуклый, разделенный дугообразными чешуйками живот, на верхушке которого еле держалось готовое вот-вот окончательно сползти одеяло.
+            a(class='button button_primary button__next ss-link')
+
+        div
+          img(src=imgPath + 'ss-freeze.png')
+          .ss-info
+            .ss-title Морские перевозки
+            .ss-description: p Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился в страшное насекомое. Лежа на панцирнотвердой спине, он видел, стоило ему приподнять голову, свой коричневый, выпуклый, разделенный дугообразными чешуйками живот, на верхушке которого еле держалось готовое вот-вот окончательно сползти одеяло.
+            a(class='button button_primary button__next ss-link')
+
+        div
+          img(src=imgPath + 'ss-freeze.png')
+          .ss-info
+            .ss-title Авиаперевозки
+            .ss-description: p Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился в страшное насекомое. Лежа на панцирнотвердой спине, он видел, стоило ему приподнять голову, свой коричневый, выпуклый, разделенный дугообразными чешуйками живот, на верхушке которого еле держалось готовое вот-вот окончательно сползти одеяло.
+            a(class='button button_primary button__next ss-link')
+
+
+section.about-section
+  .container
+    .box
+      .section-title О компании
+
+      .about-info
+        .about-short
+          p Наша компания в Республике Казахстан оказывает услуги по доставке грузов с 2007 года.
+          p Мы можем доставить груз любого характера и объема по нужному направлению любым видом транспорта.
+          p Главной ценностью нашей компании являются наши клиенты и их интересы.
+          p Высокое качество услуг по приемлемым ценам является основным приоритетом в нашей работе.
+          p Девиз нашей компании – <b>Always Best Solutions - Всегда Лучшие Решения</b>.
+          p Это означает, что мы всегда разрабатываем и предлагаем нашим клиентам наиболее оптимальные решения по доставке грузов (в соотношении цена / скорость / качество).
+
+          .about-more
+            a(class='button button_default') Читать подробнее
+
+        .about-advantages
+          ul
+            li
+              img(src=imgPath + 'adv-shipping.png')
+              div Минимальные сроки доставки
+            li
+              img(src=imgPath + 'adv-payment.png')
+              div Гибкая ценовая политика
+            li
+              img(src=imgPath + 'adv-agency.png')
+              div Широкая агентская сеть
+            li
+              img(src=imgPath + 'adv-support.png')
+              div Индивидуальный подход к каждому клиенту
+
+        .clear
+
+      .about-countries
+        .about-countries__title Мы работаем в таких странах
+
+        ul.ac-list
+          li
+            img(class='ac-flag' src=imgPath + 'flag-by.png')
+            .ac-title Белорусия
+            .ac-description Доставка грузов из Белорусии
+            a(class='button_primary button__next ac-link')
+          li
+            img(class='ac-flag' src=imgPath + 'flag-by.png')
+            .ac-title Белорусия
+            .ac-description Доставка грузов из Белорусии
+            a(class='button_primary button__next ac-link')
+          li
+            img(class='ac-flag' src=imgPath + 'flag-by.png')
+            .ac-title Белорусия
+            .ac-description Доставка грузов из Белорусии
+            a(class='button_primary button__next ac-link')
+          li
+            img(class='ac-flag' src=imgPath + 'flag-by.png')
+            .ac-title Белорусия
+            .ac-description Доставка грузов из Белорусии
+            a(class='button_primary button__next ac-link')
+          li
+            img(class='ac-flag' src=imgPath + 'flag-by.png')
+            .ac-title Белорусия
+            .ac-description Доставка грузов из Белорусии
+            a(class='button_primary button__next ac-link')
+          li
+            img(class='ac-flag' src=imgPath + 'flag-by.png')
+            .ac-title Белорусия
+            .ac-description Доставка грузов из Белорусии
+            a(class='button_primary button__next ac-link')
+
+
+section.thanks-section
+  .container
+    .section-title Благодарственные письма
+      .thanks-slider-arrows
+
+    .thanks-slider
+      .thanks-slide
+        .thanks-doc
+          img(src=imgPath + 'thanks-doc.png')
+
+          .thanks-doc-info
+            .thanks-doc-info__title Название компании
+            .thanks-doc-info__description Благодарность от компании за 5 лет успешного сотрудничества и приложенных усилий по работе
+            .thanks-doc-info__link: a(class='button button_default' href=imgPath + 'thanks-doc.png') Увеличить
+      .thanks-slide
+        .thanks-doc
+          img(src=imgPath + 'thanks-doc.png')
+
+          .thanks-doc-info
+            .thanks-doc-info__title Название компании
+            .thanks-doc-info__description Благодарность от компании за 5 лет успешного сотрудничества и приложенных усилий по работе
+            .thanks-doc-info__link: a(class='button button_default' href=imgPath + 'thanks-doc.png') Увеличить
+      .thanks-slide
+        .thanks-doc
+          img(src=imgPath + 'thanks-doc.png')
+
+          .thanks-doc-info
+            .thanks-doc-info__title Название компании
+            .thanks-doc-info__description Благодарность от компании за 5 лет успешного сотрудничества и приложенных усилий по работе
+            .thanks-doc-info__link: a(class='button button_default' href=imgPath + 'thanks-doc.png') Увеличить
+      .thanks-slide
+        .thanks-doc
+          img(src=imgPath + 'thanks-doc.png')
+
+          .thanks-doc-info
+            .thanks-doc-info__title Название компании
+            .thanks-doc-info__description Благодарность от компании за 5 лет успешного сотрудничества и приложенных усилий по работе
+            .thanks-doc-info__link: a(class='button button_default' href=imgPath + 'thanks-doc.png') Увеличить
+      .thanks-slide
+        .thanks-doc
+          img(src=imgPath + 'thanks-doc.png')
+
+          .thanks-doc-info
+            .thanks-doc-info__title Название компании
+            .thanks-doc-info__description Благодарность от компании за 5 лет успешного сотрудничества и приложенных усилий по работе
+            .thanks-doc-info__link: a(class='button button_default' href=imgPath + 'thanks-doc.png') Увеличить
+
+
+include includes/footer

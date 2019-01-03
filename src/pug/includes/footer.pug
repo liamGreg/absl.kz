@@ -1,0 +1,48 @@
+footer
+  .container
+    .footer-menu
+      .footer-menu__title Основное меню
+      +menu(menuFooter)
+      +menu(menu)
+
+    .footer-menu
+      .footer-menu__title Полезная информация
+      +menu(menuInfo)
+
+    .footer-menu
+      .footer-menu__title Наши услуги
+      +menu(menuServices)
+
+    .footer-contacts
+      table
+        tr
+          td: img(src=imgPath+'footer-phone.png')
+          td
+            div: a(href='tel:+7 (727) 279 90 37') +7 (727) 279 90 37
+            div: a(href='tel:+7 (727) 246 84 85') +7 (727) 246 84 85
+        tr
+          td: img(src=imgPath+'footer-email.png')
+          td: a(href='mailto:absl@absl.kz') absl@absl.kz
+        tr
+          td: img(src=imgPath+'footer-address.png')
+          td г. Алматы, пр. Райымбека, 165а
+
+    .clear
+
+    .footer-bottom
+      .footer-logo
+        img(src=imgPath+'logo.png')
+
+      .footer-copyright 2018 г. Транспортная компания “ABS Group”. Все права защищены
+
+      .footer-socials
+        ul.inline-block-ul
+          li: a: img(src=imgPath+'footer-insta.png')
+          li: a: img(src=imgPath+'footer-fb.png')
+          li: a: img(src=imgPath+'footer-vk.png')
+          li: a: img(src=imgPath+'footer-tw.png')
+
+      .clear
+
+script(type='text/javascript' src='js/libs.min.js')
+script(type='text/javascript' src='js/common.js')

@@ -1,12 +1,65 @@
 header
   .container
     .header-logo
-      a
-        img(src=imgPath + 'header-logo.png')
+      a(href='/'): img(src=imgPath + 'header-logo.png')
 
-    +menu('menu inline-block-ul', menu)
+    +menu(menu, 'menu inline-block-ul')
 
     .header-right
       +header-cabinet('dark')
 
       +cargo-status-check(true)
+
+      +calc()
+    .clear
+
+.header-top
+  .container
+    +menu(menuInfo, 'header-menu inline-block-ul')
+
+    .header-top-right
+      +header-cabinet()
+
+      .header-delimiter
+
+      ul(class='header-languages inline-block-ul')
+        li.active: a(href='') RUS
+        li: a(href='') KAZ
+        li: a(href='') ENG
+
+    .clear
+
+.header
+  .container
+    a(class='logo' href='/'): img(src=imgPath + 'logo.png')
+
+    .header-cities
+      +select(cities, '', false, 'no-selectize')
+
+    .header-delimiter
+      .delimiter__inner
+
+    .header-contacts
+      .header-phones +7 (727) 279-90-37 / 246 84 85
+      .header-address
+        img(src=imgPath + 'place-marker.png')
+        ='г. Алматы, пр. Райымбека, 165а'
+
+    .header-buttons
+      .header-request-leave-button
+        a(class='button button_default') Оставить запрос
+      .header-order-delivery-button
+        a(class='button button_primary') Заказать доставку
+
+    .clear
+
+.menu-block
+  .container
+    .menu-block-inner
+      +menu(menu, 'menu inline-block-ul')
+
+      .menu-block-right
+        +cargo-status-check()
+
+        +calc()
+      .clear
