@@ -17,6 +17,24 @@ $(function () {
     $('.thanks-doc-info__link a').magnificPopup({
         type: 'image'
     });
+
+    $('.datepicker-input').datepicker({
+        dateFormat: 'yyyy-mm-dd',
+        onSelect: function (formattedDate, date, inst) {
+            var $parent = inst.$el.parent();
+            var day = date.getDate();
+            var month = date.getMonth() + 1;
+            if (day < 10) {
+                day = '0' + day;
+            }
+            if (month < 10) {
+                month = '0' + month;
+            }
+            $parent.find('.date-day').val(day);
+            $parent.find('.date-month').val(month);
+            $parent.find('.date-year').val(date.getFullYear());
+        }
+    })
 });
 
 $(window).scroll(function () {
@@ -85,4 +103,8 @@ $document.on('click', '.accordeon-title', function () {
     $this.toggleClass('active').next().toggleClass('active');
 
     return false;
+});
+
+$document.on('click', '.date-day, .date-month, .date-year, .date-pick', function () {
+    $(this).parents('.datepicker-group').find('.datepicker-input').focus();
 });

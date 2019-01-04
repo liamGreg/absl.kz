@@ -1,5 +1,5 @@
+- var pageTitle = 'Главная'
 include includes/header-all
-
 
 .header-slider
   .slide-storage
@@ -32,55 +32,11 @@ include includes/header-all
         |
         | за 1 м3
 
-
 section(class='section our-services-section')
   .container
     .section-title Наши услуги
 
-    .services-switcher
-      ul.ss-list
-        li.active: a.ss-auto: span Автоперевозки
-        li: a.ss-freeze: span Перевозки рефрежиратором
-        li: a.ss-train: span Ж/Д перевозки
-        li: a.ss-sea: span Морские перевозки
-        li: a.ss-air: span Авиаперевозки
-
-      .ss-content
-        .active
-          img(src=imgPath + 'ss-freeze.png')
-          .ss-info
-            .ss-title Автоперевозки
-            .ss-description: p Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился в страшное насекомое. Лежа на панцирнотвердой спине, он видел, стоило ему приподнять голову, свой коричневый, выпуклый, разделенный дугообразными чешуйками живот, на верхушке которого еле держалось готовое вот-вот окончательно сползти одеяло.
-            a(class='button button_primary button__next ss-link')
-
-        div
-          img(src=imgPath + 'ss-freeze.png')
-          .ss-info
-            .ss-title Перевозки рефрижератором
-            .ss-description: p Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился в страшное насекомое. Лежа на панцирнотвердой спине, он видел, стоило ему приподнять голову, свой коричневый, выпуклый, разделенный дугообразными чешуйками живот, на верхушке которого еле держалось готовое вот-вот окончательно сползти одеяло.
-            a(class='button button_primary button__next ss-link')
-
-        div
-          img(src=imgPath + 'ss-freeze.png')
-          .ss-info
-            .ss-title Ж/Д перевозки
-            .ss-description: p Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился в страшное насекомое. Лежа на панцирнотвердой спине, он видел, стоило ему приподнять голову, свой коричневый, выпуклый, разделенный дугообразными чешуйками живот, на верхушке которого еле держалось готовое вот-вот окончательно сползти одеяло.
-            a(class='button button_primary button__next ss-link')
-
-        div
-          img(src=imgPath + 'ss-freeze.png')
-          .ss-info
-            .ss-title Морские перевозки
-            .ss-description: p Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился в страшное насекомое. Лежа на панцирнотвердой спине, он видел, стоило ему приподнять голову, свой коричневый, выпуклый, разделенный дугообразными чешуйками живот, на верхушке которого еле держалось готовое вот-вот окончательно сползти одеяло.
-            a(class='button button_primary button__next ss-link')
-
-        div
-          img(src=imgPath + 'ss-freeze.png')
-          .ss-info
-            .ss-title Авиаперевозки
-            .ss-description: p Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился в страшное насекомое. Лежа на панцирнотвердой спине, он видел, стоило ему приподнять голову, свой коричневый, выпуклый, разделенный дугообразными чешуйками живот, на верхушке которого еле держалось готовое вот-вот окончательно сползти одеяло.
-            a(class='button button_primary button__next ss-link')
-
+    include includes/services
 
 section.about-section
   .container
@@ -124,7 +80,7 @@ section.about-section
             img(class='ac-flag' src=imgPath + 'flag-by.png')
             .ac-title Белорусия
             .ac-description Доставка грузов из Белорусии
-            a(class='button_primary button__next ac-link')
+            a(class='button_primary button__next ac-link' href='country-delivery.html')
           li
             img(class='ac-flag' src=imgPath + 'flag-by.png')
             .ac-title Белорусия
@@ -151,53 +107,6 @@ section.about-section
             .ac-description Доставка грузов из Белорусии
             a(class='button_primary button__next ac-link')
 
-
-section.thanks-section
-  .container
-    .section-title Благодарственные письма
-      .thanks-slider-arrows
-
-    .thanks-slider
-      .thanks-slide
-        .thanks-doc
-          img(src=imgPath + 'thanks-doc.png')
-
-          .thanks-doc-info
-            .thanks-doc-info__title Название компании
-            .thanks-doc-info__description Благодарность от компании за 5 лет успешного сотрудничества и приложенных усилий по работе
-            .thanks-doc-info__link: a(class='button button_default' href=imgPath + 'thanks-doc.png') Увеличить
-      .thanks-slide
-        .thanks-doc
-          img(src=imgPath + 'thanks-doc.png')
-
-          .thanks-doc-info
-            .thanks-doc-info__title Название компании
-            .thanks-doc-info__description Благодарность от компании за 5 лет успешного сотрудничества и приложенных усилий по работе
-            .thanks-doc-info__link: a(class='button button_default' href=imgPath + 'thanks-doc.png') Увеличить
-      .thanks-slide
-        .thanks-doc
-          img(src=imgPath + 'thanks-doc.png')
-
-          .thanks-doc-info
-            .thanks-doc-info__title Название компании
-            .thanks-doc-info__description Благодарность от компании за 5 лет успешного сотрудничества и приложенных усилий по работе
-            .thanks-doc-info__link: a(class='button button_default' href=imgPath + 'thanks-doc.png') Увеличить
-      .thanks-slide
-        .thanks-doc
-          img(src=imgPath + 'thanks-doc.png')
-
-          .thanks-doc-info
-            .thanks-doc-info__title Название компании
-            .thanks-doc-info__description Благодарность от компании за 5 лет успешного сотрудничества и приложенных усилий по работе
-            .thanks-doc-info__link: a(class='button button_default' href=imgPath + 'thanks-doc.png') Увеличить
-      .thanks-slide
-        .thanks-doc
-          img(src=imgPath + 'thanks-doc.png')
-
-          .thanks-doc-info
-            .thanks-doc-info__title Название компании
-            .thanks-doc-info__description Благодарность от компании за 5 лет успешного сотрудничества и приложенных усилий по работе
-            .thanks-doc-info__link: a(class='button button_default' href=imgPath + 'thanks-doc.png') Увеличить
-
+include includes/thanks-docs
 
 include includes/footer

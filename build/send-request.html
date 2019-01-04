@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Вакансии</title>
+    <title>Отправить запрос</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Exo+2:300,400,600,700&amp;amp;subset=cyrillic">
     <link rel="stylesheet" href="css/libs.css">
     <link rel="stylesheet" href="css/main.css">
@@ -201,86 +201,70 @@
   <div class="container">
     <ul class="breadcrumbs inline-block-ul">
       <li><a href="/">Главная</a></li>
-      <li>Вакансии</li>
+      <li>Отправить запрос</li>
     </ul>
-    <div class="section-title">Вакансии</div>
-    <div class="side-container side-container-l">
-      <div class="box">
-        <div class="content">
-          <p>Выберите интерисующую вас вакансию, чтобы получить дополнительную информацию по ней</p>
-          <div class="accordeon">
-            <div class="accordeon-item">
-              <div class="accordeon-title">Название вакансии</div>
-              <div class="accordeon-description">
-                <div class="accordeon-description-inner">
-                  <p class="p-title">Требования</p>
-                  <ul>
-                    <li>Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился в страшное насекомое.</li>
-                    <li>Лежа на панцирнотвердой спине, он видел, стоило ему приподнять голову, свой коричневый, выпуклый.</li>
-                    <li>Его многочисленные, убого тонкие по сравнению с остальным телом ножки.</li>
-                    <li>Его комната, настоящая, разве что слишком маленькая, но обычная комната, мирно покоилась в своих.</li>
-                  </ul>
-                  <p class="p-title">Еще какаято информация относящеяся к вакансии</p>
-                  <p>Над столом, где были разложены распакованные образцы сукон – Замза был коммивояжером, – висел портрет, который он недавно вырезал из иллюстрированного журнала и вставил в красивую золоченую рамку. На портрете была изображена дама в меховой шляпе и боа, она сидела очень прямо и протягивала зрителю тяжелую меховую муфту, в которой целиком исчезала ее рука. Затем взгляд Грегора устремился в окно, и пасмурная погода – слышно было, как по жести подоконника стучат капли дождя – привела его и вовсе в грустное настроение.</p>
-                </div>
-              </div>
-            </div>
-            <div class="accordeon-item">
-              <div class="accordeon-title">Название вакансии</div>
-              <div class="accordeon-description">
-                <div class="accordeon-description-inner">
-                  <p class="p-title">Требования</p>
-                  <ul>
-                    <li>Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился в страшное насекомое.</li>
-                    <li>Лежа на панцирнотвердой спине, он видел, стоило ему приподнять голову, свой коричневый, выпуклый.</li>
-                    <li>Его многочисленные, убого тонкие по сравнению с остальным телом ножки.</li>
-                    <li>Его комната, настоящая, разве что слишком маленькая, но обычная комната, мирно покоилась в своих.</li>
-                  </ul>
-                  <p class="p-title">Еще какаято информация относящеяся к вакансии</p>
-                  <p>Над столом, где были разложены распакованные образцы сукон – Замза был коммивояжером, – висел портрет, который он недавно вырезал из иллюстрированного журнала и вставил в красивую золоченую рамку. На портрете была изображена дама в меховой шляпе и боа, она сидела очень прямо и протягивала зрителю тяжелую меховую муфту, в которой целиком исчезала ее рука. Затем взгляд Грегора устремился в окно, и пасмурная погода – слышно было, как по жести подоконника стучат капли дождя – привела его и вовсе в грустное настроение.</p>
-                </div>
-              </div>
-            </div>
+    <div class="section-title">Отправить запрос</div>
+    <div class="box">
+      <form class="send-request-form">
+        <div class="group group-select">
+          <select class="send-request-form-select">
+            <option></option>
+            <option value="1">Автоперевозка</option>
+            <option value="2">Перевозки рефрижератором</option>
+            <option value="3">Ж/Д перевозки</option>
+            <option value="4">Морские перевозки</option>
+            <option value="5">Авиаперевозки</option>
+          </select>
+          <label>Выберите услугу</label>
+        </div>
+        <div class="form-left">
+          <div class="form-title">Общая информация</div>
+          <div class="group">
+            <input type="text" required="required"/><span class="highlight"></span><span class="bar"></span>
+            <label>Название организации</label>
+          </div>
+          <div class="group">
+            <input type="text" required="required"/><span class="highlight"></span><span class="bar"></span>
+            <label>Контактное лицо</label>
+          </div>
+          <div class="group">
+            <input type="text" required="required"/><span class="highlight"></span><span class="bar"></span>
+            <label>E-mail</label>
+          </div>
+          <div class="group">
+            <input type="text" required="required"/><span class="highlight"></span><span class="bar"></span>
+            <label>Город и страна отправления</label>
+          </div>
+          <div class="group">
+            <input type="text" required="required"/><span class="highlight"></span><span class="bar"></span>
+            <label>Город и страна назначения</label>
           </div>
         </div>
-      </div>
+        <div class="form-right">
+          <div class="form-title">Информация о грузе</div>
+          <div class="group">
+            <input type="text" required="required"/><span class="highlight"></span><span class="bar"></span>
+            <label>Наименование груза</label>
+          </div>
+          <div class="group">
+            <input type="text" required="required"/><span class="highlight"></span><span class="bar"></span>
+            <label>Вес (кг)</label>
+          </div>
+          <div class="group">
+            <input type="text" required="required"/><span class="highlight"></span><span class="bar"></span>
+            <label>Объем (м3)</label>
+          </div>
+          <div class="group textare-group">
+            <label>Наименование груза</label>
+            <textarea></textarea>
+          </div>
+        </div>
+        <div class="clear"></div>
+        <div class="group">
+          <button class="button button_primary">Отправить</button>
+        </div>
+      </form>
     </div>
-    <form class="side-form side-form-s vacancies-form" enctype="multipart/form-data">
-      <div class="form-notice">Отправьте ваши данные и укажите интерисующую вас вакансию, мы свяжемся с вами</div>
-      <hr>
-      <div class="form-header">Заполните форму</div>
-      <div class="group">
-        <input type="text" required="required"/><span class="highlight"></span><span class="bar"></span>
-        <label>ФИО</label>
-      </div>
-      <div class="group">
-        <input type="text" required="required"/><span class="highlight"></span><span class="bar"></span>
-        <label>Номер телефона</label>
-      </div>
-      <div class="group">
-        <input type="text" required="required"/><span class="highlight"></span><span class="bar"></span>
-        <label>E-mail</label>
-      </div>
-      <div class="group group-select">
-        <select>
-          <option></option>
-          <option value="1">Программист</option>
-          <option value="2">Водитель</option>
-          <option value="3">Менеджер-проекта</option>
-        </select>
-        <label>Укажите вакансию</label>
-      </div>
-      <div class="group">
-        <label class="file-input">Загрузить резюме<img src="img/upload.png"/>
-          <input type="file" accept="application/pdf, application/rtf, application/msword"/>
-        </label>
-        <div class="file-input-notice">Файлы pdf, rtf, doc</div>
-      </div>
-      <div class="group">
-        <button class="button button_primary">Отправить</button>
-      </div>
-    </form>
-    <div class="clear"></div>
   </div>
 </section>
 <footer>

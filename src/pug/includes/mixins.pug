@@ -25,10 +25,22 @@ mixin input(labelText, inputClass = '')
     span.bar
     label= labelText
 
+mixin textarea(labelText, className = '')
+  .group.textare-group
+    label= labelText
+    textarea
+
+mixin file(labelText, inputClass, fileTypes, noticeText)
+  .group
+    label(class='file-input')= labelText
+      img(src=imgPath + 'upload.png')
+      input(class=inputClass type='file' accept=fileTypes)
+    div.file-input-notice= noticeText
+
 mixin header-cabinet(theme='')
   .header-cabinet
     .header-cabinet__key
-      img(src=imgPath + 'key' + (theme ? ('-' + theme) : '')  + '.png')
+      img(src=imgPath + 'key' + (theme ? ('-' + theme) : '') + '.png')
     .header-cabinet__link
       a(href='') Личный кабинет
 
@@ -47,17 +59,52 @@ mixin calc()
     .calc-button.drop-button
     .box.calc-box
       .box-title Тарифный калькулятор
-      form
+      .calc-progress
+        .calc-progress-point.calc-progress-from
+        .calc-progress-between
+        .calc-progress-point.calc-progress-to
+      form.calc-form
         +select(cities, 'Откуда', true)
         +select(cities, 'Куда', true)
         +input('Вес груза в кг')
         +submit-button('Рассчитать')
+      .clear
 
-mixin breadcrumbs(title)
+mixin breadcrumbs(items)
   ul(class='breadcrumbs inline-block-ul')
     li: a(href='/') Главная
-    li= title
+    each val, index in items
+      if items.length == index + 1
+        li= val
+      else
+        li: a(href='/')= val
 
 mixin submit-button(text)
   .group
     button(class='button button_primary')= text
+
+mixin radio(title, items, name, position)
+  div(class='group radio-group' class=position ? position : 'radio-group_vertical')
+    .radio-title= title
+    each val, index in items
+      .radio-input
+        input(type='radio' name=name id=name + '-' + index)
+        label(for=name + '-' + index)=val
+
+mixin date(title)
+  .datepicker-group
+    .datepicker-title= title
+    .datepicker-group-inner
+      input.datepicker-input
+      .group
+        input(class='date-day' required)
+        label День
+      .group
+        input(class='date-month' required)
+        label Месяц
+      .group
+        input(class='date-year' required)
+        label Год
+      .clear
+    img(class='date-pick' src=imgPath + 'calendar.png')
+    .clear

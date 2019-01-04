@@ -1,0 +1,23 @@
+- var pageTitle = 'Услуги'
+include includes/header-all
+
+section.our-services-section
+  .container
+    +breadcrumbs([pageTitle])
+
+    .section-title=pageTitle
+
+    include includes/services
+
+section.price-list-section
+  .container
+    .price-list-block
+      .price-list-block__service Также мы предлогаем услугу хранения груза и ТМЦ на нашем складе
+      .price-list-block__cities Москва и Алматы
+      .price-list-block__price от 70 тнг за 1м3
+      .price-list-block__button
+        a(class='button button_primary') Скачать прайс-лист
+
+include includes/thanks-docs
+
+include includes/footer

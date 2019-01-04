@@ -1,0 +1,31 @@
+- var pageTitle = 'Отправить запрос'
+include includes/header-all
+
+section
+  .container
+    +breadcrumbs([pageTitle])
+
+    .section-title=pageTitle
+
+    .box
+      form.send-request-form
+        +select(services, 'Выберите услугу', true, 'send-request-form-select')
+        .form-left
+          .form-title Общая информация
+          +input('Название организации')
+          +input('Контактное лицо')
+          +input('E-mail')
+          +input('Город и страна отправления')
+          +input('Город и страна назначения')
+
+        .form-right
+          .form-title Информация о грузе
+          +input('Наименование груза')
+          +input('Вес (кг)')
+          +input('Объем (м3)')
+          +textarea('Наименование груза')
+        .clear
+
+        +submit-button('Отправить')
+
+include includes/footer

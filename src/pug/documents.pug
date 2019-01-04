@@ -1,0 +1,32 @@
+- var pageTitle = 'Образцы документов'
+include includes/header-all
+
+section
+  .container
+    +breadcrumbs([pageTitle])
+
+    .section-title=pageTitle
+
+    .side-container.side-container-m
+      .box
+        .content
+          p На данной странице Вы можете скачать образцы всех документов, необходимых для начала сотрудничества с нашей компанией.
+          p Для начала сотрудничества с нашей компанией, Вам необходимо заключить с нами Договор и подписать Заявку.
+          p Договор является генеральным и имеет неограниченный срок действия, достаточно подписать его только один раз.
+          p Заявка заполняется на каждую перевозку в отдельности.
+
+        ul.download-documents
+          li
+            img(src=imgPath + 'document.png')
+            a(href='') Скачать Заявку
+            span (для направлений Россия - Казахстан)
+          li
+            img(src=imgPath + 'document.png')
+            a(href='') Скачать прайс-лист
+            span (на ответ.хранение грузов в тенге)
+
+    include includes/feedback-form
+
+    .clear
+
+include includes/footer

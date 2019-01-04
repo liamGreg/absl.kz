@@ -1,0 +1,55 @@
+- var pageTitle = 'Автоперевозки'
+include includes/header-all
+
+section
+  .container
+    +breadcrumbs(['Услуги', pageTitle])
+
+    .section-title=pageTitle
+
+    .side-container.side-container-l
+      img(src=imgPath+'services-auto.jpg')
+      .box
+        .content
+          p Стоимость доставки сборных грузов из Российской Федерации в Республику Казахстан Вы можете рассчитать самостоятельно, с помощью нашего тарифного калькулятора. Также Вы можете связаться с нами, или оставить запрос на сайте, и мы сами свяжемся с Вами и сообщим стоимость доставки.
+          p.p-header Основные услуги, которые мы оказываем:
+
+          +list(['доставка грузов от 1 кг из любой точки России и Беларуси во все регионы Казахстана (всеми видами транспорта)', 'доставка грузов от 1 кг из любой точки Европы во все регионы Казахстана и Средней Азии (всеми видами транспорта)'])
+
+        .floated-buttons
+          a(class='button button_default button_prev') Авиаперевозки
+          a(class='button button_default button_next') Перевозки рефрежиратором
+
+    form(class='side-form side-form-s services-form')
+      .form-header Онлайн-заявка
+
+      +radio('Вы', ['Отправитель', 'Получатель'], 'youare')
+
+      +date('Планируемая дата отгрузки:')
+
+      +submit-button('Продолжить оформление')
+
+      hr.form-delimiter
+
+      .form-notice Для расчета тарифов по другим направлениям вы можете либо связаться с нашими менеджерами по указанным контактам.
+
+      table.form-contacts
+        tr
+          td: img(src=imgPath + 'footer-phone.png')
+          td
+            div: a(href='tel:+7 (727) 279 90 37') +7 (727) 279 90 37
+            div: a(href='tel:+7 (727) 246 84 85') +7 (727) 246 84 85
+        tr
+          td: img(src=imgPath + 'footer-email.png')
+          td: a(href='mailto:absl@absl.kz') absl@absl.kz
+
+      .form-notice либо оставить Ваш запрос на сайте, и наши менеджеры рассчитают ставку и свяжутся с Вами.
+
+      .group
+        a(class='button button_default') Оставить запрос
+
+    .clear
+
+include includes/thanks-docs
+
+include includes/footer

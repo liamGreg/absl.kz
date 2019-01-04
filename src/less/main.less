@@ -225,6 +225,10 @@ header {
     .header-request-leave-button {
       float: left;
       width: 150px;
+
+      .button_default {
+        background-color: #colors[content-bg];
+      }
     }
 
     .header-order-delivery-button {
@@ -374,12 +378,47 @@ header {
     }
 
     .box-title {
-      margin-bottom: 50px;
+      margin-bottom: 10px;
     }
 
     .button {
       width: 50%;
     }
+  }
+  
+  .calc-progress {
+    float: left;
+    width: 25px;
+    margin-top: 20px;
+
+    .calc-progress-point {
+      width: 7px;
+      height: 7px;
+      border: 4px solid;
+      border-radius: 50%;
+    }
+
+    .calc-progress-from {
+      border-color: #colors[slider-dot];
+      background-color: #colors[hover-text];
+    }
+
+    .calc-progress-to {
+      border-color: #colors[static];
+      background-color: #colors[primary];
+    }
+
+    .calc-progress-between {
+      width: 1px;
+      height: 65px;
+      background-color: #colors[static];
+      margin-left: 7px;
+    }
+  }
+  
+  .calc-form {
+    float: left;
+    width: 285px;
   }
 }
 
@@ -605,6 +644,7 @@ header {
         width: 270px;
         padding-bottom: 70px;
         background-color: #colors[white-alpha];
+        z-index: 1;
 
         .ss-title {
           font-size: 20px;
@@ -962,14 +1002,176 @@ footer {
   }
 }
 
-.vacancies-box {
-  max-width: 870px;
-  box-sizing: border-box;
-  float: left;
+.form-contacts {
+  margin: 25px 0 35px 0;
+  td:first-of-type {
+    padding-right: 15px;
+    padding-top: 4px;
+  }
+
+  td {
+    color: #colors[text];
+    padding-bottom: 20px;
+    vertical-align: top;
+  }
+
+  a {
+    color: #colors[text];
+    text-decoration: none;
+  }
+
+  tr:first-of-type {
+    td {
+      div {
+        margin-top: 5px;
+        a {
+          font-size: 18px;
+        }
+      }
+    }
+
+    td:first-of-type {
+      padding-top: 10px;
+    }
+  }
+
+  tr:last-of-type {
+    td {
+      padding-bottom: 0;
+    }
+  }
+}
+
+.feedback-form {
+  .button {
+    width: 170px;
+  }
+}
+
+.services-form {
+  .button {
+    width: 225px;
+  }
 }
 
 .vacancies-form {
-  float: left;
-  width: 270px;
-  margin-left: 30px;
+  .button {
+    width: 225px;
+  }
+}
+
+.download-documents {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 50px;
+
+  li {
+    margin-bottom: 20px;
+  }
+
+  img {
+    vertical-align: middle;
+    margin-right: 20px;
+  }
+
+  a {
+    font-size: 16px;
+  }
+
+  span {
+    margin-left: 20px;
+  }
+}
+
+.contacts-box {
+  margin-top: 90px;
+  .feedback-form {
+    width: 520px;
+  }
+
+  .contacts-bg-map {
+    margin-top: 80px;
+    margin-left: 30px;
+  }
+}
+
+.advantages {
+  .advantage {
+    width: 500px;
+    float: left;
+    margin-bottom: 20px;
+    margin-right: 50px;
+
+    .advantage-title {
+      color: #colors[primary];
+      margin: 20px 0;
+      font-weight: bold;
+    }
+  }
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+.awards {
+  img {
+    vertical-align: middle;
+    margin: 0 15px;
+  }
+}
+
+.send-request-form {
+  .send-request-form-select {
+    width: 520px;
+  }
+
+  .button {
+    width: 170px;
+  }
+}
+
+.price-list-section {
+  margin-top: 100px;
+  .price-list-block {
+    background: #colors[hover-text] url("@{images-dir}storage.png") no-repeat 25px 50%;
+    height: 110px;
+    color: #colors[white];
+
+    .price-list-block__service {
+      float: left;
+      width: 390px;
+      margin-left: 40px;
+      margin-top: 25px;
+      font-size: 20px;
+      line-height: 1.5;
+      font-weight: bold;
+    }
+
+    .price-list-block__cities {
+      float: left;
+      width: 170px;
+      margin-left: 65px;
+      font-size: 20px;
+      margin-top: 45px;
+    }
+    
+    .price-list-block__price {
+      float: left;
+      width: 125px;
+      margin-left: 30px;
+      margin-top: 47px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #colors[button-primary];
+    }
+    
+    .price-list-block__button {
+      float: right;
+      margin-right: 30px;
+      width: 240px;
+      margin-top: 30px;
+    }
+  }
 }

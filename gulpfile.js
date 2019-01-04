@@ -29,7 +29,8 @@ function scripts() {
         'src/js/jquery-3.3.1.min.js',
         'src/js/selectize.min.js',
         'src/js/slick.min.js',
-        'src/js/jquery.magnific-popup.min.js'
+        'src/js/jquery.magnific-popup.min.js',
+        'src/js/datepicker.min.js'
     ])
         .pipe(concat('libs.min.js'))
         .pipe(uglify())
@@ -38,7 +39,9 @@ function scripts() {
 
 function views() {
     return gulp.src('src/pug/*.pug')
-        .pipe(pug())
+        .pipe(pug({
+            pretty: true
+        }))
         .pipe(gulp.dest('build'))
         .pipe(browserSync.stream());
 }
