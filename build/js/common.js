@@ -18,6 +18,8 @@ $(function () {
         type: 'image'
     });
 
+    $('.popup-button').magnificPopup();
+
     $('.datepicker-input').datepicker({
         dateFormat: 'yyyy-mm-dd',
         onSelect: function (formattedDate, date, inst) {
@@ -115,10 +117,50 @@ $document.on('click', '.burger', function () {
     $('.m-canvas').addClass('active');
 });
 
-$document.on('click', '.m-canvas', closeMobMenu);
-
-function closeMobMenu() {
+$document.on('click', '.m-canvas', function () {
     $('.m-menu').removeClass('active');
     $('body').removeClass('push-right');
     $('.m-canvas').removeClass('active');
-}
+});
+
+$document.on('click', '.tabs li', function () {
+    var $this = $(this), ind = $this.index(), parent = $this.parent().data('target');
+
+    if (!$this.hasClass('active')) {
+        $this.addClass('active').siblings().removeClass('active');
+        var $parent = $(parent);
+        var $target = $parent.height($parent.children('.active').height()).find('.tabs-content-item').hide().removeClass('active').eq(ind).show();
+        setTimeout(function () {
+            $target.addClass('active');
+            $parent.height($target.height());
+        }, 100);
+    }
+});
+
+$document.on('submit', '#register-form', function () {
+    $.magnificPopup.open({
+        items: {
+            src: '#register-complete-popup'
+        },
+        type: 'inline'
+    });
+
+    return false;
+});
+
+$document.on('submit', '#forgot-form', function () {
+    $.magnificPopup.open({
+        items: {
+            src: '#forgot-complete-popup'
+        },
+        type: 'inline'
+    });
+
+    return false;
+});
+
+$document.on('click', '.button_popup-close', function () {
+    $.magnificPopup.close();
+
+    return false;
+});

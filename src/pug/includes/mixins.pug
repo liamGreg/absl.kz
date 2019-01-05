@@ -18,8 +18,8 @@ mixin menu(items, className)
     each val, index in items.links
       li: a(href=val + '.html')= items.titles[index]
 
-mixin input(labelText, inputClass = '')
-  .group
+mixin input(labelText, inputClass = '', groupClass)
+  .group(class=groupClass)
     input(class=inputClass type='text' required)
     span.highlight
     span.bar
@@ -42,7 +42,10 @@ mixin header-cabinet(theme='')
     .header-cabinet__key
       img(src=imgPath + 'key' + (theme ? ('-' + theme) : '') + '.png')
     .header-cabinet__link
-      a(href='') Личный кабинет
+      a(href='#signin-popup' class='signin-popup-link popup-button') Личный кабинет
+      a(href='' class='cabinet-link') Антон Степанец
+    .header-cabinet__enter
+      img(src=imgPath + 'cabinet-enter' + (theme ? ('-' + theme) : '') + '.png')
 
 mixin cargo-status-check(flexible)
   .cargo-status-check-header

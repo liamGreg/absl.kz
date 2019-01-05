@@ -22,7 +22,8 @@
         <div class="header-right">
           <div class="header-cabinet">
             <div class="header-cabinet__key"><img src="img/key-dark.png"/></div>
-            <div class="header-cabinet__link"><a href="">Личный кабинет</a></div>
+            <div class="header-cabinet__link"><a class="signin-popup-link popup-button" href="#signin-popup">Личный кабинет</a><a class="cabinet-link" href="">Антон Степанец</a></div>
+            <div class="header-cabinet__enter"><img src="img/cabinet-enter-dark.png"/></div>
           </div>
           <div class="cargo-status-check-header">
             <div class="truck"></div>
@@ -92,9 +93,12 @@
         <div class="header-top-right">
           <div class="header-cabinet">
             <div class="header-cabinet__key"><img src="img/key.png"/></div>
-            <div class="header-cabinet__link"><a href="">Личный кабинет</a></div>
+            <div class="header-cabinet__link"><a class="signin-popup-link popup-button" href="#signin-popup">Личный кабинет</a><a class="cabinet-link" href="">Антон Степанец</a></div>
+            <div class="header-cabinet__enter"><img src="img/cabinet-enter.png"/></div>
           </div>
-          <div class="header-delimiter"></div>
+          <div class="header-delimiter">
+            <div class="delimiter__inner"></div>
+          </div>
           <ul class="header-languages inline-block-ul">
             <li class="active"><a href="">RUS</a></li>
             <li><a href="">KAZ</a></li>
@@ -207,7 +211,8 @@
       <div class="m-menu-inner">
         <div class="header-cabinet">
           <div class="header-cabinet__key"><img src="img/key.png"/></div>
-          <div class="header-cabinet__link"><a href="">Личный кабинет</a></div>
+          <div class="header-cabinet__link"><a class="signin-popup-link popup-button" href="#signin-popup">Личный кабинет</a><a class="cabinet-link" href="">Антон Степанец</a></div>
+          <div class="header-cabinet__enter"><img src="img/cabinet-enter.png"/></div>
         </div>
         <div class="clear"></div>
         <ul class="main-menu">
@@ -353,5 +358,81 @@
     </div>
   </div>
 </footer>
+<div class="popup mfp-hide" id="signin-popup">
+  <div class="box">
+    <div class="popup-title">Добро пожаловать в Личный кабинет</div>
+    <ul class="tabs" data-target="#signin-tabs">
+      <li class="active">Вход</li>
+      <li>Регистрация</li>
+    </ul>
+    <div class="tabs-content" id="signin-tabs">
+      <div class="tabs-content-item active">
+        <form>
+          <div class="group icon-input icon-input-mail">
+            <input type="text" required="required"/><span class="highlight"></span><span class="bar"></span>
+            <label>E-mail</label>
+          </div>
+          <div class="group icon-input icon-input-lock">
+            <input type="text" required="required"/><span class="highlight"></span><span class="bar"></span>
+            <label>Пароль</label>
+          </div>
+          <div class="group"><a class="popup-button" href="#forgot-popup">Забыли пароль?</a></div>
+          <div class="group">
+            <button class="button button_primary">Войти</button>
+          </div>
+        </form>
+      </div>
+      <div class="tabs-content-item">
+        <form id="register-form">
+          <div class="form-notice">Укажите данные которые указанны ниже, более подробные данные вы сможете заполнить уже в вашем личном кабинете</div>
+          <div class="group icon-input icon-input-mail">
+            <input type="text" required="required"/><span class="highlight"></span><span class="bar"></span>
+            <label>E-mail</label>
+          </div>
+          <div class="group icon-input icon-input-lock">
+            <input type="text" required="required"/><span class="highlight"></span><span class="bar"></span>
+            <label>Пароль</label>
+          </div>
+          <div class="group icon-input">
+            <input type="text" required="required"/><span class="highlight"></span><span class="bar"></span>
+            <label>Повторите пароль</label>
+          </div>
+          <div class="group">
+            <button class="button button_primary">Зарегестрироваться</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="popup mfp-hide" id="register-complete-popup">
+  <div class="box">
+    <div class="popup-title"><img src="img/success-icon.png"><span>Спасибо за регистрацию</span></div>
+    <div class="form-notice">На указанный вами E-mail отправленно письмо с подтверждением, пожайлусто пройдите по ссылке указанной в письме чтобы активировать вашу учетную запись</div>
+    <div class="button button_primary button_popup-close">Закрыть</div>
+  </div>
+</div>
+<div class="popup mfp-hide" id="forgot-popup">
+  <div class="box">
+    <div class="popup-title">Забыли пароль?</div>
+    <form id="forgot-form">
+      <div class="form-notice">Укажите E-mail а который вы регистрировались, мы пришлем вам туда новый пароль,  сменить пароль вы сможете после на тот который хотите через ваш личный кабинет</div>
+      <div class="group icon-input icon-input-mail">
+        <input type="text" required="required"/><span class="highlight"></span><span class="bar"></span>
+        <label>E-mail</label>
+      </div>
+      <div class="group">
+        <button class="button button_primary">Отправить</button>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="popup mfp-hide" id="forgot-complete-popup">
+  <div class="box">
+    <div class="popup-title"><img src="img/success-icon.png"><span>Новый пароль отправлен</span></div>
+    <div class="form-notice">Письмо с паролем отправленно на ваш E-mail. Если вы не получили письмо, пожайлусто подождите 3-10 минут. Если письмо так и не пришло вам, проверьте правильность указанного E-mail  адреса.</div>
+    <div class="button button_primary button_popup-close">Закрыть</div>
+  </div>
+</div>
 <script type="text/javascript" src="js/libs.min.js"></script>
 <script type="text/javascript" src="js/common.js"></script>

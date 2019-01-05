@@ -1,0 +1,48 @@
+div(class='popup mfp-hide' id='signin-popup')
+  .box
+    .popup-title Добро пожаловать в Личный кабинет
+
+    ul.tabs(data-target='#signin-tabs')
+      li.active Вход
+      li Регистрация
+
+    .tabs-content(id='signin-tabs')
+      .tabs-content-item.active
+        form
+          +input('E-mail', '', 'icon-input icon-input-mail')
+          +input('Пароль', '', 'icon-input icon-input-lock')
+          .group
+            a(href='#forgot-popup' class='popup-button') Забыли пароль?
+          +submit-button('Войти')
+      .tabs-content-item
+        form#register-form
+          .form-notice Укажите данные которые указанны ниже, более подробные данные вы сможете заполнить уже в вашем личном кабинете
+
+          +input('E-mail', '', 'icon-input icon-input-mail')
+          +input('Пароль', '', 'icon-input icon-input-lock')
+          +input('Повторите пароль', '', 'icon-input')
+          +submit-button('Зарегестрироваться')
+
+div(class='popup mfp-hide' id='register-complete-popup')
+  .box
+    .popup-title
+      img(src=imgPath + 'success-icon.png')
+      span Спасибо за регистрацию
+    .form-notice На указанный вами E-mail отправленно письмо с подтверждением, пожайлусто пройдите по ссылке указанной в письме чтобы активировать вашу учетную запись
+    .button.button_primary.button_popup-close Закрыть
+
+div(class='popup mfp-hide' id='forgot-popup')
+  .box
+    .popup-title Забыли пароль?
+    form#forgot-form
+      .form-notice Укажите E-mail а который вы регистрировались, мы пришлем вам туда новый пароль,  сменить пароль вы сможете после на тот который хотите через ваш личный кабинет
+      +input('E-mail', '', 'icon-input icon-input-mail')
+      +submit-button('Отправить')
+
+div(class='popup mfp-hide' id='forgot-complete-popup')
+  .box
+    .popup-title
+      img(src=imgPath + 'success-icon.png')
+      span Новый пароль отправлен
+    .form-notice Письмо с паролем отправленно на ваш E-mail. Если вы не получили письмо, пожайлусто подождите 3-10 минут. Если письмо так и не пришло вам, проверьте правильность указанного E-mail  адреса.
+    .button.button_primary.button_popup-close Закрыть

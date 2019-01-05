@@ -12,16 +12,17 @@ input[type=text], input[type=email], input[type=tel], input[type=password] {
   padding: 7px 0;
   display: block;
   border: none;
-  border-bottom: 1px solid #colors[static];
+  border-bottom: 2px solid #colors[static];
   background-color: transparent;
 }
 
 textarea {
+  box-sizing: border-box;
   width: 100%;
   height: 150px;
   padding: 7px 5px;
   display: block;
-  border: 1px solid #colors[static];
+  border: 2px solid #colors[static];
 }
 
 input:focus {
@@ -56,7 +57,7 @@ input:focus ~ label, input:valid ~ label {
 
 .bar:before, .bar:after {
   content: '';
-  height: 1px;
+  height: 2px;
   width: 0;
   bottom: 0;
   position: absolute;
