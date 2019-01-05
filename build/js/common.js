@@ -108,3 +108,17 @@ $document.on('click', '.accordeon-title', function () {
 $document.on('click', '.date-day, .date-month, .date-year, .date-pick', function () {
     $(this).parents('.datepicker-group').find('.datepicker-input').focus();
 });
+
+$document.on('click', '.burger', function () {
+    $('.m-menu').addClass('active');
+    $('body').addClass('push-right');
+    $('.m-canvas').addClass('active');
+});
+
+$document.on('click', '.m-canvas', closeMobMenu);
+
+function closeMobMenu() {
+    $('.m-menu').removeClass('active');
+    $('body').removeClass('push-right');
+    $('.m-canvas').removeClass('active');
+}

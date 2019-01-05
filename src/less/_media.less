@@ -1,0 +1,46 @@
+@max-width: 1170px;
+@min-width: 320px;
+
+.container {
+  max-width: @max-width;
+  min-width: @min-width;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: @max-width - 1px) {
+  body {
+    font-size: 12px;
+  }
+
+  header {
+    display: none !important;
+  }
+
+  .header-top {
+    display: none;
+  }
+
+  .header {
+    display: none;
+  }
+
+  .menu-block {
+    display: none;
+  }
+
+  .header-slider {
+    margin-top: 3px;
+  }
+
+  .m-header {
+    display: block;
+  }
+
+  .m-menu {
+    display: block;
+  }
+
+  footer {
+    display: none;
+  }
+}

@@ -1,0 +1,211 @@
+.m-header {
+  display: none;
+  height: 64px;
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+  background-color: #colors[white];
+  top: 0;
+
+  a {
+    display: inline-block;
+    line-height: 64px;
+    text-align: center;
+    img {
+      vertical-align: middle;
+    }
+  }
+
+  .burger {
+    height: 64px;
+    width: 44px;
+    float: left;
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      width: 34px;
+      height: 5px;
+      border: 3px solid #colors[hover-text];
+      border-left: none;
+      border-right: none;
+      top: 22px;
+      left: 5px;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      width: 34px;
+      border-top: 3px solid #colors[hover-text];
+      top: 38px;
+      left: 5px;
+    }
+  }
+
+  .logo {
+    line-height: 64px;
+    float: left;
+    margin-left: 10px;
+    img {
+      width: 155px;
+    }
+  }
+
+  .header-right {
+    float: right;
+  }
+
+  .truck-search-button {
+    width: 50px;
+  }
+
+  .calc-button {
+    width: 50px;
+  }
+}
+
+body.push-right {
+  padding-left: 230px;
+}
+
+.m-menu-closer {
+  font-size: 55px;
+  line-height: 64px;
+  width: 44px;
+  padding: 0;
+  vertical-align: middle;
+  top: 15px;
+  right: 15px;
+  color: #colors[hover-text];
+  opacity: 0.5;
+  font-weight: 900;
+  background-color: transparent;
+  border: none;
+  float: left;
+  display: none;
+}
+
+.push-right {
+  .burger {
+    display: none;
+  }
+  .m-menu-closer {
+    display: block;
+  }
+}
+
+.m-menu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 4;
+  width: 0;
+  height: 100%;
+  background-color: #colors[primary];
+  overflow-x: hidden;
+  transition: @transition-duration;
+  .m-menu-inner {
+    padding: 0 15px 15px 15px;
+    width: 200px;
+  }
+
+  &.active {
+    width: 230px;
+  }
+
+  .header-cabinet {
+    .header-cabinet__key {
+      line-height: 64px;
+    }
+    .header-cabinet__link {
+      line-height: 64px;
+    }
+  }
+
+  .main-menu {
+    li {
+      margin: 30px 0;
+    }
+    a {
+      color: #colors[white];
+      text-transform: uppercase;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  }
+  
+  hr {
+    border-color: #colors[slider-dot];
+  }
+
+  .menu-buttons {
+    width: 160px;
+    margin: 0 auto;
+    .button_default {
+      color: #colors[white];
+      margin-bottom: 25px;
+    }
+  }
+  
+  .sub-menu {
+    margin: 30px 0;
+    li {
+      margin: 20px 0;
+    }
+    a {
+      color: #colors[top-menu-link];
+    }
+  }
+
+  .header-cities {
+    float: none;
+    margin-left: 0;
+    margin-top: 0;
+    select {
+      color: #colors[white]
+    }
+  }
+
+  .header-contacts {
+    float: none;
+    margin-top: 25px;
+    color: #colors[white];
+    .header-phones {
+      color: #colors[white];
+    }
+    .header-address {
+      span {
+        width: 150px;
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
+  }
+
+  .header-languages {
+    margin-top: 20px;
+    li {
+      line-height: 64px;
+    }
+  }
+}
+
+.m-canvas {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  text-align: center;
+  transition: opacity @transition-duration;
+  background-color: #colors[primary];
+  opacity: .4;
+
+  &.active {
+    width: 100%;
+  }
+}

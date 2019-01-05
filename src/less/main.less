@@ -1,6 +1,5 @@
 @import "_vars";
 @import "_reset";
-@import "_container";
 @import "_colors";
 @import "_mixins";
 @import "_form";
@@ -11,6 +10,8 @@ body {
   font-size: @fontsize;
   color: #colors[text];
   background: #colors[content-bg] url("@{images-dir}map-bg.png") no-repeat calc(50% + 480px) 30px;
+  position: relative;
+  transition: @transition-duration;
 }
 
 header {
@@ -133,36 +134,43 @@ header {
     }
   }
 
-  .header-languages {
-    float: left;
-    li {
-      margin-left: 20px;
-      position: relative;
-
-      &:first-of-type {
-        margin-left: 0;
-      }
-
-      &.active:after {
-        content: '';
-        position: absolute;
-        .triangle('up', 5px, #fff);
-        bottom: 0;
-        left: 50%;
-        margin-left: -5px;
-      }
-
-      a {
-        font-size: 12px;
-        font-weight: bold;
-      }
-    }
-  }
-
   .header-delimiter {
     .delimiter(45px, 15px, #435d7a, 30px);
     float: left;
     margin: 0 25px;
+  }
+}
+
+.header-languages {
+  float: left;
+  li {
+    margin-left: 20px;
+    position: relative;
+
+    &:first-of-type {
+      margin-left: 0;
+    }
+
+    &.active {
+      a {
+        color: #colors[link-active];
+        text-decoration: none;
+      }
+    }
+
+    &.active:after {
+      content: '';
+      position: absolute;
+      .triangle('up', 5px, #fff);
+      bottom: 0;
+      left: 50%;
+      margin-left: -5px;
+    }
+
+    a {
+      font-size: 12px;
+      font-weight: bold;
+    }
   }
 }
 
@@ -172,50 +180,10 @@ header {
     margin-top: 25px;
   }
 
-  .header-cities {
-    float: left;
-    margin-left: 100px;
-    margin-top: 55px;
-
-    .group {
-      margin-top: 0;
-      select {
-        border: none;
-        border-bottom: 1px dashed;
-        text-transform: uppercase;
-        padding: 5px 15px 5px 0;
-        color: #colors[hover-text];
-        background: transparent;
-        appearance: none;
-        position: relative;
-        background: url("@{images-dir}arrow-down.png") no-repeat right center;
-        font-weight: 600;
-      }
-    }
-  }
-
   .header-delimiter {
     .delimiter(60px, 60px, #colors[static], 30px);
     float: left;
     margin-top: 35px;
-  }
-
-  .header-contacts {
-    float: left;
-    margin-top: 35px;
-
-    .header-phones {
-      font-size: 18px;
-      color: #colors[black];
-    }
-
-    .header-address {
-      margin-top: 15px;
-      img {
-        vertical-align: middle;
-        margin-right: 15px;
-      }
-    }
   }
 
   .header-buttons {
@@ -235,6 +203,46 @@ header {
       float: left;
       width: 170px;
       margin-left: 10px;
+    }
+  }
+}
+
+.header-cities {
+  float: left;
+  margin-left: 100px;
+  margin-top: 55px;
+
+  .group {
+    margin-top: 0;
+    select {
+      border: none;
+      border-bottom: 1px dashed;
+      text-transform: uppercase;
+      padding: 5px 15px 5px 0;
+      color: #colors[hover-text];
+      background: transparent;
+      appearance: none;
+      position: relative;
+      background: url("@{images-dir}arrow-down.png") no-repeat right center;
+      font-weight: 600;
+    }
+  }
+}
+
+.header-contacts {
+  float: left;
+  margin-top: 35px;
+
+  .header-phones {
+    font-size: 18px;
+    color: #colors[black];
+  }
+
+  .header-address {
+    margin-top: 15px;
+    img {
+      vertical-align: middle;
+      margin-right: 15px;
     }
   }
 }
@@ -1175,3 +1183,7 @@ footer {
     }
   }
 }
+
+
+@import "_mobile";
+@import "_media";
