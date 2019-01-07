@@ -18,14 +18,15 @@ mixin menu(items, className)
     each val, index in items.links
       li: a(href=val + '.html')= items.titles[index]
 
-mixin input(labelText, inputClass = '', groupClass)
+mixin input(labelText, inputClass, groupClass, name)
   .group(class=groupClass)
-    input(class=inputClass type='text' required)
+    input(class=inputClass type='text' name=name)
     span.highlight
     span.bar
-    label= labelText
+    label!= labelText
+    .error-message Текст ошибки
 
-mixin textarea(labelText, className = '')
+mixin textarea(labelText, className)
   .group.textare-group
     label= labelText
     textarea
@@ -37,7 +38,7 @@ mixin file(labelText, inputClass, fileTypes, noticeText)
       input(class=inputClass type='file' accept=fileTypes)
     div.file-input-notice= noticeText
 
-mixin header-cabinet(theme='')
+mixin header-cabinet(theme)
   .header-cabinet
     .header-cabinet__key
       img(src=imgPath + 'key' + (theme ? ('-' + theme) : '') + '.png')
@@ -49,13 +50,14 @@ mixin header-cabinet(theme='')
 
 mixin cargo-status-check(flexible)
   .cargo-status-check-header
-    .truck
-    .title(class=flexible ? 'csc-title' : '')
-      span Статус груза
-    form(class='form' class=flexible ? 'csc-form' : '')
-      .input
-        +input('Номер накладной', flexible ? 'csc-input' : '')
-      button(class='cargo-status-check-header-button' class=flexible ? 'csc-button' : '')
+    .cargo-status-check-header-inner
+      .truck
+      .title(class=flexible ? 'csc-title' : '')
+        span Статус груза
+      form(class='form' class=flexible ? 'csc-form' : '')
+        .input
+          +input('Номер накладной', flexible ? 'csc-input' : '')
+        button(class='cargo-status-check-header-button' class=flexible ? 'csc-button' : '')
 
 mixin calc()
   .calc
@@ -86,28 +88,56 @@ mixin submit-button(text)
   .group
     button(class='button button_primary')= text
 
-mixin radio(title, items, name, position)
-  div(class='group radio-group' class=position ? position : 'radio-group_vertical')
+mixin radio(title, items, name, position, className)
+  div(class='group radio-group' class=position ? 'radio-group_horizontal' : 'radio-group_vertical' class=className)
     .radio-title= title
     each val, index in items
       .radio-input
-        input(type='radio' name=name id=name + '-' + index)
+        input(type='radio' name=name id=name + '-' + index value=index)
         label(for=name + '-' + index)=val
 
-mixin date(title)
-  .datepicker-group
+mixin date(title, className)
+  .datepicker-group(class=className)
     .datepicker-title= title
     .datepicker-group-inner
       input.datepicker-input
       .group
-        input(class='date-day' required)
+        input(class='date-day' type='text')
         label День
       .group
-        input(class='date-month' required)
+        input(class='date-month')
         label Месяц
       .group
-        input(class='date-year' required)
+        input(class='date-year')
         label Год
       .clear
     img(class='date-pick' src=imgPath + 'calendar.png')
     .clear
+
+mixin size-input()
+  .size-group
+    .size-label
+      .size-volume.active Объем (м3)
+      .size-dimension Габариты
+    .size-input
+      .size-input-volume
+        input
+      .size-input-dimension
+        .size-input-dimension-length
+          input
+          label Длина
+        .size-input-dimension-width
+          input
+          label Ширина
+        .size-input-dimension-height
+          input
+          label Высота
+    .size-radio
+      input(type='radio' name='size' value=1 class='size-radio-volume' checked)
+      input(type='radio' name='size' value=2 class='size-radio-dimension')
+
+mixin checkbox(label, name, value)
+  .group.checkbox-group
+    label
+      input(type='checkbox' name=name id=name value=value)
+      label(for=name)=label

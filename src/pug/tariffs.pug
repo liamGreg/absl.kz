@@ -22,38 +22,39 @@ section
           p.p-header Виды грузов, которые мы перевозим:
           +list(['стандартные грузы от 1 кг (отправки консолидированных машин по графику)', 'опасные грузы', 'крупногабаритные и сверхтяжелые грузы', 'дорогостоящие грузы', 'грузы, требующие температурный режим'])
 
-    form(class='side-form side-form-s services-form')
-      .form-notice Стоимость доставки сборных грузов из Российской Федерации в Республику Казахстан Вы можете рассчитать самостоятельно, с помощью нашего
-        a(href='calculator.html')= ' тарифного калькулятора.'
+    .side-right.side-right-s
+      form.services-form
+        .form-notice Стоимость доставки сборных грузов из Российской Федерации в Республику Казахстан Вы можете рассчитать самостоятельно, с помощью нашего
+          a(href='calculator.html')= ' тарифного калькулятора.'
 
-      hr
+        hr
 
-      .form-header Онлайн-заявка
+        .form-header Онлайн-заявка
 
-      +radio('Вы', ['Отправитель', 'Получатель'], 'youare')
+        +radio('Вы', ['Отправитель', 'Получатель'], 'youare')
 
-      +date('Планируемая дата отгрузки:')
+        +date('Планируемая дата отгрузки:')
 
-      +submit-button('Продолжить оформление')
+        +submit-button('Продолжить оформление')
 
-      hr.form-delimiter
+        hr.form-delimiter
 
-      .form-notice Также Вы можете связаться с нами
+        .form-notice Также Вы можете связаться с нами
 
-      table.form-contacts
-        tr
-          td: img(src=imgPath + 'footer-phone.png')
-          td
-            div: a(href='tel:+7 (727) 279 90 37') +7 (727) 279 90 37
-            div: a(href='tel:+7 (727) 246 84 85') +7 (727) 246 84 85
-        tr
-          td: img(src=imgPath + 'footer-email.png')
-          td: a(href='mailto:absl@absl.kz') absl@absl.kz
+        table.form-contacts
+          tr
+            td: img(src=imgPath + 'footer-phone.png')
+            td
+              div: a(href='tel:+7 (727) 279 90 37') +7 (727) 279 90 37
+              div: a(href='tel:+7 (727) 246 84 85') +7 (727) 246 84 85
+          tr
+            td: img(src=imgPath + 'footer-email.png')
+            td: a(href='mailto:absl@absl.kz') absl@absl.kz
 
-      .form-notice или оставить запрос на сайте, и мы сами свяжемся с Вами и сообщим стоимость доставки
+        .form-notice или оставить запрос на сайте, и мы сами свяжемся с Вами и сообщим стоимость доставки
 
-      .group
-        a(class='button button_default') Оставить запрос
+        .group
+          a(class='button button_default') Оставить запрос
 
     .clear
 

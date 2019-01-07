@@ -1,0 +1,263 @@
+- var pageTitle = 'Личный кабинет'
+include includes/header-all
+
+section
+  .container
+    +breadcrumbs([pageTitle])
+
+    .section-title=pageTitle
+      a.logout-button(href='') Выйти
+    .clear
+
+    .box
+      ul.tabs(data-target='#cabinet-tabs')
+        li.active ваши данные
+        li мой адрес
+        li.orders-tab мои заказы
+        li смена пароля
+        li оповещения
+
+      .tabs-content(id='cabinet-tabs')
+        .tabs-content-item.active
+          form
+            .box-inner
+              .box-left
+                .box-block
+                  p.p-title Ваше ФИО
+                  +input('Фамилия')
+                  +input('Имя')
+                  +input('Отчество')
+                .box-block
+                  p.p-title Дополнительная информация
+                  +input('Наименование компании')
+                  +input('E-mail')
+                  +input('Ваш телефон')
+              .box-right
+                p.p-title Дата рождения
+                +date()
+              .clear
+            .cabinet-button
+              +submit-button('Сохранить изменения')
+        .tabs-content-item
+          from
+            .box-inner
+              .box-left
+                .box-block
+                  +select(cities, 'Город')
+                  +input('Улица')
+                  +input('Дом/квартира/офис')
+              .clear
+            .cabinet-button
+              +submit-button('Сохранить изменения')
+        .tabs-content-item
+          .orders
+            .filters
+              .filter-label Показать:
+              a.filter.active Все
+              a.filter Черновики
+              a.filter Отправления
+              a.filter Получения
+            .orders-action-buttons
+              a(href='').orders-action-download Скачать
+              a(href='').orders-action-print Распечатать
+            .clear
+            .date-filters
+              .filters
+                .filter-label Показать по дате:
+                span с
+                +date()
+                span по
+                +date()
+              .orders-action-buttons
+                +checkbox('Показать доставленные', 'filter_delivered')
+              .clear
+            table.orders-list(cellpadding=0 cellspacing=0 border=0)
+              tr
+                th номер заказа
+                th дата оформления
+                th откуда
+                th куда
+                th отправитель
+                th получатель
+                th статус
+                th время прибытия
+                th
+              tr
+                td.order-id 24354623440
+                td 22.04.2018 в 12:45
+                td г. Алматы
+                td г. Москва
+                td.order-bold Вы
+                td Александр Сергеевич
+                td
+                  .order-on-way В пути
+                    a: img(src=imgPath+'hint.png')
+                td 22.04.2018 в 12:45
+                td.order-action-buttons
+                  a: img(src=imgPath+'download.png')
+                  a: img(src=imgPath+'print.png')
+                  a.order-info-button: img(src=imgPath+'info.png')
+              tr
+                td.order-id 24354623440
+                td 22.04.2018 в 12:45
+                td г. Алматы
+                td г. Москва
+                td ООО “МИРАТЕКСТ”
+                td.order-bold Вы
+                td
+                  .order-delivered Доставленно
+                td 22.04.2018 в 12:45
+                td.order-action-buttons
+                  a: img(src=imgPath+'download.png')
+                  a: img(src=imgPath+'print.png')
+                  a.order-info-button: img(src=imgPath+'info.png')
+              tr
+                td.order-id Черновик
+                td 22.04.2018 в 12:45
+                td г. Алматы
+                td г. Москва
+                td.order-bold Вы
+                td -
+                td -
+                td -
+                td.order-action-buttons
+                  a.order-create Создать заказ
+              tr
+                td.order-id 24354623440
+                td 22.04.2018 в 12:45
+                td г. Алматы
+                td г. Москва
+                td.order-bold Вы
+                td Александр Сергеевич
+                td
+                  .order-on-way В пути
+                    a: img(src=imgPath+'hint.png')
+                td 22.04.2018 в 12:45
+                td.order-action-buttons
+                  a: img(src=imgPath+'download.png')
+                  a: img(src=imgPath+'print.png')
+                  a.order-info-button: img(src=imgPath+'info.png')
+              tr
+                td.order-id 24354623440
+                td 22.04.2018 в 12:45
+                td г. Алматы
+                td г. Москва
+                td ООО “МИРАТЕКСТ”
+                td.order-bold Вы
+                td
+                  .order-delivered Доставленно
+                td 22.04.2018 в 12:45
+                td.order-action-buttons
+                  a: img(src=imgPath+'download.png')
+                  a: img(src=imgPath+'print.png')
+                  a.order-info-button: img(src=imgPath+'info.png')
+              tr
+                td.order-id Черновик
+                td 22.04.2018 в 12:45
+                td г. Алматы
+                td г. Москва
+                td.order-bold Вы
+                td -
+                td -
+                td -
+                td.order-action-buttons
+                  a.order-create Создать заказ
+              tr
+                td.order-id 24354623440
+                td 22.04.2018 в 12:45
+                td г. Алматы
+                td г. Москва
+                td.order-bold Вы
+                td Александр Сергеевич
+                td
+                  .order-on-way В пути
+                    a: img(src=imgPath+'hint.png')
+                td 22.04.2018 в 12:45
+                td.order-action-buttons
+                  a: img(src=imgPath+'download.png')
+                  a: img(src=imgPath+'print.png')
+                  a.order-info-button: img(src=imgPath+'info.png')
+              tr
+                td.order-id 24354623440
+                td 22.04.2018 в 12:45
+                td г. Алматы
+                td г. Москва
+                td ООО “МИРАТЕКСТ”
+                td.order-bold Вы
+                td
+                  .order-delivered Доставленно
+                td 22.04.2018 в 12:45
+                td.order-action-buttons
+                  a: img(src=imgPath+'download.png')
+                  a: img(src=imgPath+'print.png')
+                  a.order-info-button: img(src=imgPath+'info.png')
+              tr
+                td.order-id Черновик
+                td 22.04.2018 в 12:45
+                td г. Алматы
+                td г. Москва
+                td.order-bold Вы
+                td -
+                td -
+                td -
+                td.order-action-buttons
+                  a.order-create Создать заказ
+              tr
+                td.order-id Черновик
+                td 22.04.2018 в 12:45
+                td г. Алматы
+                td г. Москва
+                td.order-bold Вы
+                td -
+                td -
+                td -
+                td.order-action-buttons
+                  a.order-create Создать заказ
+            .pager
+              ul.inline-block-ul
+                li.active: a 1
+                li: a 2
+                li: a 3
+                li ...
+                li: a 8
+            .clear
+        .tabs-content-item
+          from
+            .box-inner
+              .box-left
+                .box-block
+                  +input('Старый пароль')
+                  +input('Новый пароль')
+                  +input('Повторить пароль')
+              .clear
+            .cabinet-button
+              +submit-button('Сохранить изменения')
+        .tabs-content-item
+          from
+            .box-inner
+              .box-left
+                p Тут представленна основная информация о том как сервис будет оповещать вас о статусах груза, наших новостях и прочей полезной информации
+                .box-block
+                  p.p-title Статус отправления
+                  +checkbox('Оповещать при любых изменениях статуса груза', 'cargo_status_change', 1)
+                .box-block
+                  p.p-title Оповещать при доставке к месту назначения
+                  +checkbox('На электронную почту', 'cargo_delivered_email', 1)
+                  +checkbox('На телефон указанный в профиле', 'cargo_delivered_sms', 1)
+                .box-block
+                  p.p-title Другие оповещения
+                  +checkbox('Уведомлять об изменениях в учетных данных', 'profile_changed', 1)
+                  +checkbox('Уведомлять при создании отправление мне', 'shipped_to_me', 1)
+              .box-right
+                .about-news-checkbox
+                  +checkbox('Держать в курсе наших новостей', 'about_news', 1)
+              .clear
+            .cabinet-button
+              +submit-button('Сохранить изменения')
+    .orders-notice
+      img.orders-notice-bulb(src=imgPath+'bulb.png')
+      | Скачать или распечатать счет на оплату услуги вы можете нажав на соответствующую кнопку в таблице заказов
+      img.orders-notice-download(src=imgPath+'download.png')
+      img.orders-notice-print(src=imgPath+'print.png')
+
+include includes/footer

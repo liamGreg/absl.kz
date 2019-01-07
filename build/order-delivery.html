@@ -26,17 +26,20 @@
             <div class="header-cabinet__enter"><img src="img/cabinet-enter-dark.png"/></div>
           </div>
           <div class="cargo-status-check-header">
-            <div class="truck"></div>
-            <div class="title csc-title"><span>Статус груза</span></div>
-            <form class="form csc-form">
-              <div class="input">
-                <div class="group">
-                  <input class="csc-input" type="text" required="required"/><span class="highlight"></span><span class="bar"></span>
-                  <label>Номер накладной</label>
+            <div class="cargo-status-check-header-inner">
+              <div class="truck"></div>
+              <div class="title csc-title"><span>Статус груза</span></div>
+              <form class="form csc-form">
+                <div class="input">
+                  <div class="group">
+                    <input class="csc-input" type="text"/><span class="highlight"></span><span class="bar"></span>
+                    <label>Номер накладной</label>
+                    <div class="error-message">Текст ошибки</div>
+                  </div>
                 </div>
-              </div>
-              <button class="cargo-status-check-header-button csc-button"></button>
-            </form>
+                <button class="cargo-status-check-header-button csc-button"></button>
+              </form>
+            </div>
           </div>
           <div class="calc">
             <div class="calc-button drop-button"></div>
@@ -67,8 +70,9 @@
                   <label>Куда</label>
                 </div>
                 <div class="group">
-                  <input type="text" required="required"/><span class="highlight"></span><span class="bar"></span>
+                  <input type="text"/><span class="highlight"></span><span class="bar"></span>
                   <label>Вес груза в кг</label>
+                  <div class="error-message">Текст ошибки</div>
                 </div>
                 <div class="group">
                   <button class="button button_primary">Рассчитать</button>
@@ -144,17 +148,20 @@
           </ul>
           <div class="menu-block-right">
             <div class="cargo-status-check-header">
-              <div class="truck"></div>
-              <div class="title"><span>Статус груза</span></div>
-              <form class="form">
-                <div class="input">
-                  <div class="group">
-                    <input type="text" required="required"/><span class="highlight"></span><span class="bar"></span>
-                    <label>Номер накладной</label>
+              <div class="cargo-status-check-header-inner">
+                <div class="truck"></div>
+                <div class="title"><span>Статус груза</span></div>
+                <form class="form">
+                  <div class="input">
+                    <div class="group">
+                      <input type="text"/><span class="highlight"></span><span class="bar"></span>
+                      <label>Номер накладной</label>
+                      <div class="error-message">Текст ошибки</div>
+                    </div>
                   </div>
-                </div>
-                <button class="cargo-status-check-header-button"></button>
-              </form>
+                  <button class="cargo-status-check-header-button"></button>
+                </form>
+              </div>
             </div>
             <div class="calc">
               <div class="calc-button drop-button"></div>
@@ -185,8 +192,9 @@
                     <label>Куда</label>
                   </div>
                   <div class="group">
-                    <input type="text" required="required"/><span class="highlight"></span><span class="bar"></span>
+                    <input type="text"/><span class="highlight"></span><span class="bar"></span>
                     <label>Вес груза в кг</label>
+                    <div class="error-message">Текст ошибки</div>
                   </div>
                   <div class="group">
                     <button class="button button_primary">Рассчитать</button>
@@ -264,24 +272,296 @@
     <div class="section-notice">Заполните форму необходимыми данными и отправьте. При возникновении трудностей в заполнении заявки обратитесь <br>к менеджеру информационно-справочной службы по телефону: <b>+7 (727) 279 90 37</b></div>
     <div class="side-menu">
       <ul>
+        <li class="active">
+          <div class="side-menu-num"><span>1.</span></div>
+          <div class="side-menu-item"><a>Ваша роль и дата отгрузки</a></div>
+        </li>
+        <li>
+          <div class="side-menu-num"><span>2.</span></div>
+          <div class="side-menu-item"><a> Данные отправителя</a></div>
+        </li>
+        <li>
+          <div class="side-menu-num"><span>3.</span></div>
+          <div class="side-menu-item"><a> Данные получателя</a></div>
+        </li>
+        <li>
+          <div class="side-menu-num"><span>4.</span></div>
+          <div class="side-menu-item"><a> Описание груза и доп. услуги</a></div>
+        </li>
         <li></li>
       </ul>
     </div>
-    <div class="side-container side-container-s">
+    <div class="side-container side-container-xs">
       <div class="box">
         <div class="content">
-          <p>На данной странице Вы можете скачать образцы всех документов, необходимых для начала сотрудничества с нашей компанией.</p>
-          <p>Для начала сотрудничества с нашей компанией, Вам необходимо заключить с нами Договор и подписать Заявку.</p>
-          <p>Договор является генеральным и имеет неограниченный срок действия, достаточно подписать его только один раз.</p>
-          <p>Заявка заполняется на каждую перевозку в отдельности.</p>
+          <form id="order-delivery-form">
+            <div class="step-form">
+              <div class="step-form-content step-form-content-1 active">
+                <div class="step-form-content-inner">
+                  <p class="p-header">Ваша роль и дата отгрузки</p>
+                  <div class="group radio-group radio-group_vertical step-form-role">
+                    <div class="radio-title">Вы</div>
+                    <div class="radio-input">
+                      <input type="radio" name="role" id="role-1" value="1"/>
+                      <label for="role-1">Отправитель</label>
+                    </div>
+                    <div class="radio-input">
+                      <input type="radio" name="role" id="role-2" value="2"/>
+                      <label for="role-2">Получатель</label>
+                    </div>
+                  </div>
+                  <div class="datepicker-group step-form-date">
+                    <div class="datepicker-title">Планируемая дата отгрузки:</div>
+                    <div class="datepicker-group-inner">
+                      <input class="datepicker-input"/>
+                      <div class="group">
+                        <input class="date-day" type="text"/>
+                        <label>День</label>
+                      </div>
+                      <div class="group">
+                        <input class="date-month"/>
+                        <label>Месяц</label>
+                      </div>
+                      <div class="group">
+                        <input class="date-year"/>
+                        <label>Год</label>
+                      </div>
+                      <div class="clear"></div>
+                    </div><img class="date-pick" src="img/calendar.png"/>
+                    <div class="clear"></div>
+                  </div>
+                </div>
+                <div class="floated-buttons"><a class="button button_default button_prev button_disabled">Назад</a><a class="button button_default button_next">Далее</a></div>
+              </div>
+              <div class="step-form-content step-form-content-2">
+                <div class="step-form-content-inner">
+                  <p class="p-header">Данные отправителя</p>
+                  <div class="group group-select">
+                    <select>
+                      <option></option>
+                      <option value="1">Алматы</option>
+                      <option value="2">Москва</option>
+                      <option value="3">Новоибирск</option>
+                    </select>
+                    <label>Город</label>
+                  </div>
+                  <div class="group">
+                    <input type="text"/><span class="highlight"></span><span class="bar"></span>
+                    <label>Название компании</label>
+                    <div class="error-message">Текст ошибки</div>
+                  </div>
+                  <div class="group">
+                    <input type="text"/><span class="highlight"></span><span class="bar"></span>
+                    <label>Адрес</label>
+                    <div class="error-message">Текст ошибки</div>
+                  </div>
+                  <div class="group">
+                    <input type="text"/><span class="highlight"></span><span class="bar"></span>
+                    <label>Контактное лицо</label>
+                    <div class="error-message">Текст ошибки</div>
+                  </div>
+                  <div class="group">
+                    <input type="text"/><span class="highlight"></span><span class="bar"></span>
+                    <label>Контактный телефон</label>
+                    <div class="error-message">Текст ошибки</div>
+                  </div>
+                  <div class="group">
+                    <input type="text"/><span class="highlight"></span><span class="bar"></span>
+                    <label>E-mail</label>
+                    <div class="error-message">Текст ошибки</div>
+                  </div>
+                  <div class="group">
+                    <input class="step-form-sender-address" type="text"/><span class="highlight"></span><span class="bar"></span>
+                    <label>Адрес загрузки</label>
+                    <div class="error-message">Текст ошибки</div>
+                  </div>
+                </div>
+                <div class="floated-buttons"><a class="button button_default button_prev">Назад</a><a class="button button_default button_next">Далее</a></div>
+              </div>
+              <div class="step-form-content step-form-content-3">
+                <div class="step-form-content-inner">
+                  <p class="p-header">Данные получателя</p>
+                  <div class="group group-select">
+                    <select>
+                      <option></option>
+                      <option value="1">Алматы</option>
+                      <option value="2">Москва</option>
+                      <option value="3">Новоибирск</option>
+                    </select>
+                    <label>Город</label>
+                  </div>
+                  <div class="group">
+                    <input type="text"/><span class="highlight"></span><span class="bar"></span>
+                    <label>Название компании</label>
+                    <div class="error-message">Текст ошибки</div>
+                  </div>
+                  <div class="group">
+                    <input type="text"/><span class="highlight"></span><span class="bar"></span>
+                    <label>Адрес</label>
+                    <div class="error-message">Текст ошибки</div>
+                  </div>
+                  <div class="group">
+                    <input type="text"/><span class="highlight"></span><span class="bar"></span>
+                    <label>Контактное лицо</label>
+                    <div class="error-message">Текст ошибки</div>
+                  </div>
+                  <div class="group">
+                    <input type="text"/><span class="highlight"></span><span class="bar"></span>
+                    <label>Контактный телефон</label>
+                    <div class="error-message">Текст ошибки</div>
+                  </div>
+                  <div class="group">
+                    <input type="text"/><span class="highlight"></span><span class="bar"></span>
+                    <label>E-mail</label>
+                    <div class="error-message">Текст ошибки</div>
+                  </div>
+                  <div class="group">
+                    <input class="step-form-receiver-address" type="text"/><span class="highlight"></span><span class="bar"></span>
+                    <label>Адрес доставки</label>
+                    <div class="error-message">Текст ошибки</div>
+                  </div>
+                </div>
+                <div class="floated-buttons"><a class="button button_default button_prev">Назад</a><a class="button button_default button_next">Далее</a></div>
+              </div>
+              <div class="step-form-content step-form-content-4">
+                <div class="step-form-content-inner">
+                  <p class="p-header">Описание груза</p>
+                  <div class="step-form-cargos"><a class="add-cargo-button" href="">Добавить груз</a>
+                    <table>
+                      <tr>
+                        <td class="cargo-num">1.</td>
+                        <td class="cargo-name">
+                          <div class="group">
+                            <input type="text" name="cargo[name][]"/><span class="highlight"></span><span class="bar"></span>
+                            <label>Наименование</label>
+                            <div class="error-message">Текст ошибки</div>
+                          </div>
+                        </td>
+                        <td class="cargo-weight">
+                          <div class="group">
+                            <input type="text" name="cargo[weight][]"/><span class="highlight"></span><span class="bar"></span>
+                            <label>Общий вес (кг)</label>
+                            <div class="error-message">Текст ошибки</div>
+                          </div>
+                        </td>
+                        <td class="cargo-volume">
+                          <div class="group">
+                            <input type="text" name="cargo[volume][]"/><span class="highlight"></span><span class="bar"></span>
+                            <label>Обьем (м<sup>3</sup>)</label>
+                            <div class="error-message">Текст ошибки</div>
+                          </div>
+                        </td>
+                        <td class="cargo-places">
+                          <div class="group">
+                            <input type="text" name="cargo[places][]"/><span class="highlight"></span><span class="bar"></span>
+                            <label>Кол-во мест</label>
+                            <div class="error-message">Текст ошибки</div>
+                          </div>
+                        </td>
+                        <td class="cargo-delete-button"><a class="disabled"><img src="img/trash.png"></a></td>
+                      </tr>
+                    </table>
+                  </div>
+                  <hr>
+                  <p class="p-header">Дополнительные услуги</p>
+                  <div class="step-form-radios">
+                    <div class="group radio-group radio-group_horizontal">
+                      <div class="radio-title">Забор груза со склада</div>
+                      <div class="radio-input">
+                        <input type="radio" name="take" id="take-0" value="0"/>
+                        <label for="take-0">Нет</label>
+                      </div>
+                      <div class="radio-input">
+                        <input type="radio" name="take" id="take-1" value="1"/>
+                        <label for="take-1">Да</label>
+                      </div>
+                    </div>
+                    <div class="group radio-group radio-group_horizontal">
+                      <div class="radio-title">Изготовление дополнительной упаковки:</div>
+                      <div class="radio-input">
+                        <input type="radio" name="packaging" id="packaging-0" value="0"/>
+                        <label for="packaging-0">Нет</label>
+                      </div>
+                      <div class="radio-input">
+                        <input type="radio" name="packaging" id="packaging-1" value="1"/>
+                        <label for="packaging-1">Да</label>
+                      </div>
+                    </div>
+                    <div class="group radio-group radio-group_horizontal">
+                      <div class="radio-title">Страхование груза (0,2% от стоимости груза):</div>
+                      <div class="radio-input">
+                        <input type="radio" name="insurance" id="insurance-0" value="0"/>
+                        <label for="insurance-0">Нет</label>
+                      </div>
+                      <div class="radio-input">
+                        <input type="radio" name="insurance" id="insurance-1" value="1"/>
+                        <label for="insurance-1">Да</label>
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="group group-select">
+                    <select class="step-form-buyer">
+                      <option value="1">Отправитель</option>
+                      <option value="2">Получатель</option>
+                    </select>
+                    <label>Оплачивает услугу</label>
+                  </div>
+                </div>
+                <div class="floated-buttons"><a class="button button_default button_prev">Назад</a><a class="button button_default button_next" id="to-confirmation-step">Далее</a></div>
+              </div>
+              <div class="step-form-content step-form-content-5">
+                <div class="step-form-content-inner">
+                  <p class="p-header">Подтверждение заполненной информации</p>
+                  <div class="filled-fields-confirmation"></div>
+                  <hr>
+                  <div class="filled-field-group confirmation-cargos">
+                    <div class="filled-field">
+                      <div class="filled-field-title">Груз:</div>
+                      <div class="filled-field-cargos"></div>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="filled-field-group">
+                    <div class="filled-field">
+                      <div class="filled-field-title">Дополнительные услуги:</div>
+                      <div class="filled-field-services">
+                        <ul></ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="filled-field-group">
+                    <div class="filled-field"><span class="filled-field-title">Оплачивает услугу:</span><span class="filled-field-description confirmation-buyer"></span></div>
+                    <div class="filled-field"><span class="filled-field-title">Оплата за доставку:</span><span class="filled-field-description confirmation-price">2 450 руб</span></div>
+                  </div>
+                </div>
+                <div class="floated-buttons"><a class="button button_default button_prev">Назад</a>
+                  <button class="button button_primary step-form-accept-button">Подтвердить и отправить</button>
+                </div>
+              </div>
+            </div>
+          </form>
         </div>
-        <ul class="download-documents">
-          <li><img src="img/document.png"><a href="">Скачать Заявку</a><span>(для направлений Россия - Казахстан)</span></li>
-          <li><img src="img/document.png"><a href="">Скачать прайс-лист</a><span>(на ответ.хранение грузов в тенге)</span></li>
-        </ul>
       </div>
     </div>
-    <div class="side-form side-form-s"></div>
+    <div class="side-right side-right-s">
+      <p class="p-header">Заполненная информация</p>
+      <div class="filled-fields">
+        <div class="filled-field-group">
+          <div class="filled-field"><span class="filled-field-title">Ваша роль:</span><span class="filled-field-description filled-field-role">-</span></div>
+          <div class="filled-field"><span class="filled-field-title">Дата отгрузки:</span><span class="filled-field-description filled-field-step-date">-</span></div>
+        </div>
+        <div class="filled-field-group">
+          <div class="filled-field"><span class="filled-field-title">Данные отправителя:</span><span class="filled-field-description filled-field-sender">-</span></div>
+          <div class="filled-field"><span class="filled-field-title">Загрузка:</span><span class="filled-field-description filled-field-sender-address">-</span></div>
+        </div>
+        <div class="filled-field-group">
+          <div class="filled-field"><span class="filled-field-title">Данные получателя:</span><span class="filled-field-description filled-field-receiver">-</span></div>
+          <div class="filled-field"><span class="filled-field-title">Доставка:</span><span class="filled-field-description filled-field-receiver-address">-</span></div>
+        </div>
+      </div>
+      <hr>
+    </div>
     <div class="clear"></div>
   </div>
 </section>
@@ -366,12 +646,14 @@
       <div class="tabs-content-item active">
         <form>
           <div class="group icon-input icon-input-mail">
-            <input type="text" required="required"/><span class="highlight"></span><span class="bar"></span>
+            <input type="text"/><span class="highlight"></span><span class="bar"></span>
             <label>E-mail</label>
+            <div class="error-message">Текст ошибки</div>
           </div>
           <div class="group icon-input icon-input-lock">
-            <input type="text" required="required"/><span class="highlight"></span><span class="bar"></span>
+            <input type="text"/><span class="highlight"></span><span class="bar"></span>
             <label>Пароль</label>
+            <div class="error-message">Текст ошибки</div>
           </div>
           <div class="group"><a class="popup-button" href="#forgot-popup">Забыли пароль?</a></div>
           <div class="group">
@@ -383,16 +665,19 @@
         <form id="register-form">
           <div class="form-notice">Укажите данные которые указанны ниже, более подробные данные вы сможете заполнить уже в вашем личном кабинете</div>
           <div class="group icon-input icon-input-mail">
-            <input type="text" required="required"/><span class="highlight"></span><span class="bar"></span>
+            <input type="text"/><span class="highlight"></span><span class="bar"></span>
             <label>E-mail</label>
+            <div class="error-message">Текст ошибки</div>
           </div>
           <div class="group icon-input icon-input-lock">
-            <input type="text" required="required"/><span class="highlight"></span><span class="bar"></span>
+            <input type="text"/><span class="highlight"></span><span class="bar"></span>
             <label>Пароль</label>
+            <div class="error-message">Текст ошибки</div>
           </div>
           <div class="group icon-input">
-            <input type="text" required="required"/><span class="highlight"></span><span class="bar"></span>
+            <input type="text"/><span class="highlight"></span><span class="bar"></span>
             <label>Повторите пароль</label>
+            <div class="error-message">Текст ошибки</div>
           </div>
           <div class="group">
             <button class="button button_primary">Зарегестрироваться</button>
@@ -415,8 +700,9 @@
     <form id="forgot-form">
       <div class="form-notice">Укажите E-mail а который вы регистрировались, мы пришлем вам туда новый пароль,  сменить пароль вы сможете после на тот который хотите через ваш личный кабинет</div>
       <div class="group icon-input icon-input-mail">
-        <input type="text" required="required"/><span class="highlight"></span><span class="bar"></span>
+        <input type="text"/><span class="highlight"></span><span class="bar"></span>
         <label>E-mail</label>
+        <div class="error-message">Текст ошибки</div>
       </div>
       <div class="group">
         <button class="button button_primary">Отправить</button>
@@ -429,6 +715,120 @@
     <div class="popup-title"><img src="img/success-icon.png"><span>Новый пароль отправлен</span></div>
     <div class="form-notice">Письмо с паролем отправленно на ваш E-mail. Если вы не получили письмо, пожайлусто подождите 3-10 минут. Если письмо так и не пришло вам, проверьте правильность указанного E-mail  адреса.</div>
     <div class="button button_primary button_popup-close">Закрыть</div>
+  </div>
+</div>
+<div class="popup mfp-hide" id="order-delivery-complete-popup">
+  <div class="box">
+    <div class="popup-title"><img src="img/success-icon.png"><span>Заказ на доставку оформлен</span></div>
+    <p>Мы свяжемся с вами в ближайшее время для подтверждения доставки. Номер накладной и прочая информация будет отправлена на указанные E-mail адреса отправителя и получателя.</p>
+    <p>Также через личный кабинет вы можете в режиме онлайн видеть состояние ваших отправлений и получений</p>
+    <p><a href="">Личный кабинет</a></p>
+    <div class="button button_primary button_popup-close">Закрыть</div>
+  </div>
+</div>
+<div class="popup mfp-hide order-info-popup" id="order-info-popup">
+  <div class="box">
+    <div class="order-info">
+      <div class="order-title"><span>Информация о грузе:</span>24354623440</div>
+      <div class="orders-action-buttons"><a class="orders-action-download" href="">Скачать</a><a class="orders-action-print" href="">Распечатать</a></div>
+      <div class="clear"></div>
+      <div class="popup-left">
+        <div class="order-field"><span>Ваша роль:</span>Отправитель</div>
+        <div class="order-field"><span>Дата отгрузки:</span>14.02.2018</div>
+      </div>
+      <div class="popup-right">
+        <div class="order-field"><span>Оплачивает услугу:</span>Отправитель</div>
+        <div class="order-field"><span>Оплата за доставку:</span><span class="order-info-price">2 450 руб</span></div>
+      </div>
+      <div class="clear"></div>
+      <div class="order-tracking">
+        <div class="order-tracking-triplet">
+          <div class="order-tracking-left"><b>Отправка:</b>22.04.2018</div>
+          <div class="order-tracking-center"><span class="order-tracking-status">Доставка формируется</span></div>
+          <div class="order-tracking-right"><b>Доставка:</b>22.04.2018</div>
+        </div>
+        <div class="clear"></div>
+        <div class="order-tracking-progress">
+          <div class="order-tracking-mark"><img src="img/trucking-mark.png"></div>
+          <div class="order-tracking-progress-point order-tracking-progress-from"></div>
+          <div class="order-tracking-progress-point order-tracking-progress-to"></div>
+          <div class="order-tracking-progress-between"></div>
+        </div>
+        <div class="order-tracking-triplet order-tracking-bottom">
+          <div class="order-tracking-left"><b>г. Астана</b></div>
+          <div class="order-tracking-center"><b>в Пути</b></div>
+          <div class="order-tracking-right"><b>г. Москва</b></div>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="popup-left">
+        <div class="filled-field-group">
+          <div class="filled-field"><span class="filled-field-title">Данные отправителя:</span>
+            <div class="filled-field-description filled-field-sender">г . Астана, ООО "Белые-сады" пр. мира 10, офис 24 Горбунов Олексей, +7034-594-65-34, aleey@whiteg.ru</div>
+          </div>
+          <div class="filled-field"><span class="filled-field-title">Загрузка:</span><span class="filled-field-description filled-field-sender-address">г. Астана, пр. мира 10, офис 24</span></div>
+        </div>
+      </div>
+      <div class="popup-right">
+        <div class="filled-field-group">
+          <div class="filled-field"><span class="filled-field-title">Данные получателя:</span>
+            <div class="filled-field-description filled-field-receiver">г . Москва, ООО "Белые-сады" пр. мира 10, офис 24 Дмитрий Белашов, +7034-594-65-34, aleey@whiteg.ru</div>
+          </div>
+          <div class="filled-field"><span class="filled-field-title">Доставка:</span><span class="filled-field-description filled-field-receiver-address">г. Москва, пр. мира 10, офис 24</span></div>
+        </div>
+      </div>
+      <div class="clear"></div>
+      <hr>
+      <div class="filled-field-group confirmation-cargos">
+        <div class="filled-field">
+          <div class="filled-field-title">Груз:</div>
+          <div class="filled-field-cargos">
+            <table>
+              <tr>
+                <td>1:</td>
+                <td>Наименование груза</td>
+                <td>45 кг</td>
+                <td>54,4  м<sup>3</sup></td>
+                <td>6 мест</td>
+              </tr>
+              <tr>
+                <td>2:</td>
+                <td>Наименование груза</td>
+                <td>45 кг</td>
+                <td>54,4  м<sup>3</sup></td>
+                <td>6 мест</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="order-info-services">
+        <div class="popup-left">
+          <div class="filled-field-group">
+            <div class="filled-field">
+              <div class="filled-field-title">Дополнительные услуги:</div>
+              <div class="content">
+                <ul>
+                  <li>Забор груза со склада</li>
+                  <li>Страхование груза (0,2% от стоимости груза)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="popup-right">
+          <div class="filled-field-group">
+            <div class="filled-field">
+              <div class="filled-field-title">Данные о транспорте:</div>
+              <div class="filled-field-description"><b>Номер авто:</b>ЕР234546РФ</div>
+              <div class="filled-field-description"><b>Название автотраспорта:</b>ПАЗ 3564</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
   </div>
 </div>
 <script type="text/javascript" src="js/libs.min.js"></script>

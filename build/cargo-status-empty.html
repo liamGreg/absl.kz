@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Статус груза</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Exo+2:300,400,600,700&amp;amp;subset=cyrillic">
+    <link rel="stylesheet" href="css/libs.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-logo"><a href="/"><img src="img/header-logo.png"></a></div>
+        <ul class="menu inline-block-ul">
+          <li><a href="about.html">О компании</a></li>
+          <li><a href="services.html">Услуги</a></li>
+          <li><a href="tariffs.html">Тарифы</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+        <div class="header-right">
+          <div class="header-cabinet">
+            <div class="header-cabinet__key"><img src="img/key-dark.png"/></div>
+            <div class="header-cabinet__link"><a class="signin-popup-link popup-button" href="#signin-popup">Личный кабинет</a><a class="cabinet-link" href="">Антон Степанец</a></div>
+            <div class="header-cabinet__enter"><img src="img/cabinet-enter-dark.png"/></div>
+          </div>
+          <div class="cargo-status-check-header">
+            <div class="cargo-status-check-header-inner">
+              <div class="truck"></div>
+              <div class="title csc-title"><span>Статус груза</span></div>
+              <form class="form csc-form">
+                <div class="input">
+                  <div class="group">
+                    <input class="csc-input" type="text"/><span class="highlight"></span><span class="bar"></span>
+                    <label>Номер накладной</label>
+                    <div class="error-message">Текст ошибки</div>
+                  </div>
+                </div>
+                <button class="cargo-status-check-header-button csc-button"></button>
+              </form>
+            </div>
+          </div>
+          <div class="calc">
+            <div class="calc-button drop-button"></div>
+            <div class="box calc-box">
+              <div class="box-title">Тарифный калькулятор</div>
+              <div class="calc-progress">
+                <div class="calc-progress-point calc-progress-from"></div>
+                <div class="calc-progress-between"></div>
+                <div class="calc-progress-point calc-progress-to"></div>
+              </div>
+              <form class="calc-form">
+                <div class="group group-select">
+                  <select>
+                    <option></option>
+                    <option value="1">Алматы</option>
+                    <option value="2">Москва</option>
+                    <option value="3">Новоибирск</option>
+                  </select>
+                  <label>Откуда</label>
+                </div>
+                <div class="group group-select">
+                  <select>
+                    <option></option>
+                    <option value="1">Алматы</option>
+                    <option value="2">Москва</option>
+                    <option value="3">Новоибирск</option>
+                  </select>
+                  <label>Куда</label>
+                </div>
+                <div class="group">
+                  <input type="text"/><span class="highlight"></span><span class="bar"></span>
+                  <label>Вес груза в кг</label>
+                  <div class="error-message">Текст ошибки</div>
+                </div>
+                <div class="group">
+                  <button class="button button_primary">Рассчитать</button>
+                </div>
+              </form>
+              <div class="clear"></div>
+            </div>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </header>
+    <div class="header-top">
+      <div class="container">
+        <ul class="header-menu inline-block-ul">
+          <li><a href=".html">Как отправить груз</a></li>
+          <li><a href="vacancies.html">Вакансии</a></li>
+          <li><a href="faq.html">Вопросы</a></li>
+          <li><a href="documents.html">Образцы документов</a></li>
+          <li><a href=".html">Франшиза</a></li>
+        </ul>
+        <div class="header-top-right">
+          <div class="header-cabinet">
+            <div class="header-cabinet__key"><img src="img/key.png"/></div>
+            <div class="header-cabinet__link"><a class="signin-popup-link popup-button" href="#signin-popup">Личный кабинет</a><a class="cabinet-link" href="">Антон Степанец</a></div>
+            <div class="header-cabinet__enter"><img src="img/cabinet-enter.png"/></div>
+          </div>
+          <div class="header-delimiter">
+            <div class="delimiter__inner"></div>
+          </div>
+          <ul class="header-languages inline-block-ul">
+            <li class="active"><a href="">RUS</a></li>
+            <li><a href="">KAZ</a></li>
+            <li><a href="">ENG</a></li>
+          </ul>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <div class="header">
+      <div class="container"><a class="logo" href="/"><img src="img/logo.png"></a>
+        <div class="header-cities">
+          <div class="group group-select">
+            <select class="no-selectize">
+              <option value="1">Алматы</option>
+              <option value="2">Москва</option>
+              <option value="3">Новоибирск</option>
+            </select>
+          </div>
+        </div>
+        <div class="header-delimiter">
+          <div class="delimiter__inner"></div>
+        </div>
+        <div class="header-contacts">
+          <div class="header-phones">+7 (727) 279-90-37 / 246 84 85</div>
+          <div class="header-address"><img src="img/place-marker.png"><span>г. Алматы, пр. Райымбека, 165а</span></div>
+        </div>
+        <div class="header-buttons">
+          <div class="header-request-leave-button"><a class="button button_default" href="send-request.html">Оставить запрос</a></div>
+          <div class="header-order-delivery-button"><a class="button button_primary" href="order-delivery.html">Заказать доставку</a></div>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <div class="menu-block">
+      <div class="container">
+        <div class="menu-block-inner">
+          <ul class="menu inline-block-ul">
+            <li><a href="about.html">О компании</a></li>
+            <li><a href="services.html">Услуги</a></li>
+            <li><a href="tariffs.html">Тарифы</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+          </ul>
+          <div class="menu-block-right">
+            <div class="cargo-status-check-header">
+              <div class="cargo-status-check-header-inner">
+                <div class="truck"></div>
+                <div class="title"><span>Статус груза</span></div>
+                <form class="form">
+                  <div class="input">
+                    <div class="group">
+                      <input type="text"/><span class="highlight"></span><span class="bar"></span>
+                      <label>Номер накладной</label>
+                      <div class="error-message">Текст ошибки</div>
+                    </div>
+                  </div>
+                  <button class="cargo-status-check-header-button"></button>
+                </form>
+              </div>
+            </div>
+            <div class="calc">
+              <div class="calc-button drop-button"></div>
+              <div class="box calc-box">
+                <div class="box-title">Тарифный калькулятор</div>
+                <div class="calc-progress">
+                  <div class="calc-progress-point calc-progress-from"></div>
+                  <div class="calc-progress-between"></div>
+                  <div class="calc-progress-point calc-progress-to"></div>
+                </div>
+                <form class="calc-form">
+                  <div class="group group-select">
+                    <select>
+                      <option></option>
+                      <option value="1">Алматы</option>
+                      <option value="2">Москва</option>
+                      <option value="3">Новоибирск</option>
+                    </select>
+                    <label>Откуда</label>
+                  </div>
+                  <div class="group group-select">
+                    <select>
+                      <option></option>
+                      <option value="1">Алматы</option>
+                      <option value="2">Москва</option>
+                      <option value="3">Новоибирск</option>
+                    </select>
+                    <label>Куда</label>
+                  </div>
+                  <div class="group">
+                    <input type="text"/><span class="highlight"></span><span class="bar"></span>
+                    <label>Вес груза в кг</label>
+                    <div class="error-message">Текст ошибки</div>
+                  </div>
+                  <div class="group">
+                    <button class="button button_primary">Рассчитать</button>
+                  </div>
+                </form>
+                <div class="clear"></div>
+              </div>
+            </div>
+          </div>
+          <div class="clear"></div>
+        </div>
+      </div>
+    </div>
+    <div class="m-header">
+      <div class="burger"></div>
+      <button class="m-menu-closer">×</button><a class="logo"><img src="img/logo.png"></a>
+      <div class="header-right"><a class="truck-search-button"><img src="img/truck-search-dark.png"></a><a class="calc-button"><img src="img/calc.png"></a></div>
+      <div class="clear"></div>
+    </div>
+    <div class="m-canvas"></div>
+    <div class="m-menu">
+      <div class="m-menu-inner">
+        <div class="header-cabinet">
+          <div class="header-cabinet__key"><img src="img/key.png"/></div>
+          <div class="header-cabinet__link"><a class="signin-popup-link popup-button" href="#signin-popup">Личный кабинет</a><a class="cabinet-link" href="">Антон Степанец</a></div>
+          <div class="header-cabinet__enter"><img src="img/cabinet-enter.png"/></div>
+        </div>
+        <div class="clear"></div>
+        <ul class="main-menu">
+          <li><a href="about.html">О компании</a></li>
+          <li><a href="services.html">Услуги</a></li>
+          <li><a href="tariffs.html">Тарифы</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+        <hr>
+        <div class="menu-buttons"><a class="button button_default">Оставить запрос</a><a class="button button_primary">Заказать доставку</a></div>
+        <hr>
+        <ul class="sub-menu">
+          <li><a href=".html">Как отправить груз</a></li>
+          <li><a href="vacancies.html">Вакансии</a></li>
+          <li><a href="faq.html">Вопросы</a></li>
+          <li><a href="documents.html">Образцы документов</a></li>
+          <li><a href=".html">Франшиза</a></li>
+        </ul>
+        <hr>
+        <div class="header-cities">
+          <div class="group group-select">
+            <select class="no-selectize">
+              <option value="1">Алматы</option>
+              <option value="2">Москва</option>
+              <option value="3">Новоибирск</option>
+            </select>
+          </div>
+        </div>
+        <div class="header-contacts">
+          <div class="header-phones">+7 (727) 279-90-37 <br> 246 84 85</div>
+          <div class="header-address"><img src="img/place-marker.png"><span>г. Алматы, пр. Райымбека, 165а</span></div>
+        </div>
+        <ul class="header-languages inline-block-ul">
+          <li class="active"><a href="">RUS</a></li>
+          <li><a href="">KAZ</a></li>
+          <li><a href="">ENG</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
+<section>
+  <div class="container">
+    <ul class="breadcrumbs inline-block-ul">
+      <li><a href="/">Главная</a></li>
+      <li>Статус груза</li>
+    </ul>
+    <div class="section-title">Статус груза</div>
+    <p>На этой странице Вы можете получить информацию о Вашем грузе</p>
+    <div class="box cargo-status-box">
+      <form class="cargo-status-search-form">
+        <input type="text">
+        <button></button>
+      </form>
+      <div class="cargo-status-empty"><img src="img/cargo-search-empty.png"></div>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="container">
+    <div class="footer-menu">
+      <div class="footer-menu__title">Основное меню</div>
+      <ul>
+        <li><a href="order-delivery.html">Заказать доставку</a></li>
+        <li><a href=".html">Статус груза</a></li>
+      </ul>
+      <ul>
+        <li><a href="about.html">О компании</a></li>
+        <li><a href="services.html">Услуги</a></li>
+        <li><a href="tariffs.html">Тарифы</a></li>
+        <li><a href="contacts.html">Контакты</a></li>
+      </ul>
+    </div>
+    <div class="footer-menu">
+      <div class="footer-menu__title">Полезная информация</div>
+      <ul>
+        <li><a href=".html">Как отправить груз</a></li>
+        <li><a href="vacancies.html">Вакансии</a></li>
+        <li><a href="faq.html">Вопросы</a></li>
+        <li><a href="documents.html">Образцы документов</a></li>
+        <li><a href=".html">Франшиза</a></li>
+      </ul>
+    </div>
+    <div class="footer-menu">
+      <div class="footer-menu__title">Наши услуги</div>
+      <ul>
+        <li><a href="services-auto.html">Автоперевозка</a></li>
+        <li><a href=".html">Перевозки рефрижератором</a></li>
+        <li><a href=".html">Ж/Д перевозки</a></li>
+        <li><a href=".html">Морские перевозки</a></li>
+        <li><a href=".html">Авиаперевозки</a></li>
+      </ul>
+    </div>
+    <div class="footer-contacts">
+      <table>
+        <tr>
+          <td><img src="img/footer-phone.png"></td>
+          <td>
+            <div><a href="tel:+7 (727) 279 90 37">+7 (727) 279 90 37</a></div>
+            <div><a href="tel:+7 (727) 246 84 85">+7 (727) 246 84 85</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td><img src="img/footer-email.png"></td>
+          <td><a href="mailto:absl@absl.kz">absl@absl.kz</a></td>
+        </tr>
+        <tr>
+          <td><img src="img/footer-address.png"></td>
+          <td>г. Алматы, пр. Райымбека, 165а</td>
+        </tr>
+      </table>
+    </div>
+    <div class="clear"></div>
+    <div class="footer-bottom">
+      <div class="footer-logo"><img src="img/logo.png"></div>
+      <div class="footer-copyright">2018 г. Транспортная компания “ABS Group”. Все права защищены</div>
+      <div class="footer-socials">
+        <ul class="inline-block-ul">
+          <li><a><img src="img/footer-insta.png"></a></li>
+          <li><a><img src="img/footer-fb.png"></a></li>
+          <li><a><img src="img/footer-vk.png"></a></li>
+          <li><a><img src="img/footer-tw.png"></a></li>
+        </ul>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+</footer>
+<div class="popup mfp-hide" id="signin-popup">
+  <div class="box">
+    <div class="popup-title">Добро пожаловать в Личный кабинет</div>
+    <ul class="tabs" data-target="#signin-tabs">
+      <li class="active">Вход</li>
+      <li>Регистрация</li>
+    </ul>
+    <div class="tabs-content" id="signin-tabs">
+      <div class="tabs-content-item active">
+        <form>
+          <div class="group icon-input icon-input-mail">
+            <input type="text"/><span class="highlight"></span><span class="bar"></span>
+            <label>E-mail</label>
+            <div class="error-message">Текст ошибки</div>
+          </div>
+          <div class="group icon-input icon-input-lock">
+            <input type="text"/><span class="highlight"></span><span class="bar"></span>
+            <label>Пароль</label>
+            <div class="error-message">Текст ошибки</div>
+          </div>
+          <div class="group"><a class="popup-button" href="#forgot-popup">Забыли пароль?</a></div>
+          <div class="group">
+            <button class="button button_primary">Войти</button>
+          </div>
+        </form>
+      </div>
+      <div class="tabs-content-item">
+        <form id="register-form">
+          <div class="form-notice">Укажите данные которые указанны ниже, более подробные данные вы сможете заполнить уже в вашем личном кабинете</div>
+          <div class="group icon-input icon-input-mail">
+            <input type="text"/><span class="highlight"></span><span class="bar"></span>
+            <label>E-mail</label>
+            <div class="error-message">Текст ошибки</div>
+          </div>
+          <div class="group icon-input icon-input-lock">
+            <input type="text"/><span class="highlight"></span><span class="bar"></span>
+            <label>Пароль</label>
+            <div class="error-message">Текст ошибки</div>
+          </div>
+          <div class="group icon-input">
+            <input type="text"/><span class="highlight"></span><span class="bar"></span>
+            <label>Повторите пароль</label>
+            <div class="error-message">Текст ошибки</div>
+          </div>
+          <div class="group">
+            <button class="button button_primary">Зарегестрироваться</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="popup mfp-hide" id="register-complete-popup">
+  <div class="box">
+    <div class="popup-title"><img src="img/success-icon.png"><span>Спасибо за регистрацию</span></div>
+    <div class="form-notice">На указанный вами E-mail отправленно письмо с подтверждением, пожайлусто пройдите по ссылке указанной в письме чтобы активировать вашу учетную запись</div>
+    <div class="button button_primary button_popup-close">Закрыть</div>
+  </div>
+</div>
+<div class="popup mfp-hide" id="forgot-popup">
+  <div class="box">
+    <div class="popup-title">Забыли пароль?</div>
+    <form id="forgot-form">
+      <div class="form-notice">Укажите E-mail а который вы регистрировались, мы пришлем вам туда новый пароль,  сменить пароль вы сможете после на тот который хотите через ваш личный кабинет</div>
+      <div class="group icon-input icon-input-mail">
+        <input type="text"/><span class="highlight"></span><span class="bar"></span>
+        <label>E-mail</label>
+        <div class="error-message">Текст ошибки</div>
+      </div>
+      <div class="group">
+        <button class="button button_primary">Отправить</button>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="popup mfp-hide" id="forgot-complete-popup">
+  <div class="box">
+    <div class="popup-title"><img src="img/success-icon.png"><span>Новый пароль отправлен</span></div>
+    <div class="form-notice">Письмо с паролем отправленно на ваш E-mail. Если вы не получили письмо, пожайлусто подождите 3-10 минут. Если письмо так и не пришло вам, проверьте правильность указанного E-mail  адреса.</div>
+    <div class="button button_primary button_popup-close">Закрыть</div>
+  </div>
+</div>
+<div class="popup mfp-hide" id="order-delivery-complete-popup">
+  <div class="box">
+    <div class="popup-title"><img src="img/success-icon.png"><span>Заказ на доставку оформлен</span></div>
+    <p>Мы свяжемся с вами в ближайшее время для подтверждения доставки. Номер накладной и прочая информация будет отправлена на указанные E-mail адреса отправителя и получателя.</p>
+    <p>Также через личный кабинет вы можете в режиме онлайн видеть состояние ваших отправлений и получений</p>
+    <p><a href="">Личный кабинет</a></p>
+    <div class="button button_primary button_popup-close">Закрыть</div>
+  </div>
+</div>
+<div class="popup mfp-hide order-info-popup" id="order-info-popup">
+  <div class="box">
+    <div class="order-info">
+      <div class="order-title"><span>Информация о грузе:</span>24354623440</div>
+      <div class="orders-action-buttons"><a class="orders-action-download" href="">Скачать</a><a class="orders-action-print" href="">Распечатать</a></div>
+      <div class="clear"></div>
+      <div class="popup-left">
+        <div class="order-field"><span>Ваша роль:</span>Отправитель</div>
+        <div class="order-field"><span>Дата отгрузки:</span>14.02.2018</div>
+      </div>
+      <div class="popup-right">
+        <div class="order-field"><span>Оплачивает услугу:</span>Отправитель</div>
+        <div class="order-field"><span>Оплата за доставку:</span><span class="order-info-price">2 450 руб</span></div>
+      </div>
+      <div class="clear"></div>
+      <div class="order-tracking">
+        <div class="order-tracking-triplet">
+          <div class="order-tracking-left"><b>Отправка:</b>22.04.2018</div>
+          <div class="order-tracking-center"><span class="order-tracking-status">Доставка формируется</span></div>
+          <div class="order-tracking-right"><b>Доставка:</b>22.04.2018</div>
+        </div>
+        <div class="clear"></div>
+        <div class="order-tracking-progress">
+          <div class="order-tracking-mark"><img src="img/trucking-mark.png"></div>
+          <div class="order-tracking-progress-point order-tracking-progress-from"></div>
+          <div class="order-tracking-progress-point order-tracking-progress-to"></div>
+          <div class="order-tracking-progress-between"></div>
+        </div>
+        <div class="order-tracking-triplet order-tracking-bottom">
+          <div class="order-tracking-left"><b>г. Астана</b></div>
+          <div class="order-tracking-center"><b>в Пути</b></div>
+          <div class="order-tracking-right"><b>г. Москва</b></div>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="popup-left">
+        <div class="filled-field-group">
+          <div class="filled-field"><span class="filled-field-title">Данные отправителя:</span>
+            <div class="filled-field-description filled-field-sender">г . Астана, ООО "Белые-сады" пр. мира 10, офис 24 Горбунов Олексей, +7034-594-65-34, aleey@whiteg.ru</div>
+          </div>
+          <div class="filled-field"><span class="filled-field-title">Загрузка:</span><span class="filled-field-description filled-field-sender-address">г. Астана, пр. мира 10, офис 24</span></div>
+        </div>
+      </div>
+      <div class="popup-right">
+        <div class="filled-field-group">
+          <div class="filled-field"><span class="filled-field-title">Данные получателя:</span>
+            <div class="filled-field-description filled-field-receiver">г . Москва, ООО "Белые-сады" пр. мира 10, офис 24 Дмитрий Белашов, +7034-594-65-34, aleey@whiteg.ru</div>
+          </div>
+          <div class="filled-field"><span class="filled-field-title">Доставка:</span><span class="filled-field-description filled-field-receiver-address">г. Москва, пр. мира 10, офис 24</span></div>
+        </div>
+      </div>
+      <div class="clear"></div>
+      <hr>
+      <div class="filled-field-group confirmation-cargos">
+        <div class="filled-field">
+          <div class="filled-field-title">Груз:</div>
+          <div class="filled-field-cargos">
+            <table>
+              <tr>
+                <td>1:</td>
+                <td>Наименование груза</td>
+                <td>45 кг</td>
+                <td>54,4  м<sup>3</sup></td>
+                <td>6 мест</td>
+              </tr>
+              <tr>
+                <td>2:</td>
+                <td>Наименование груза</td>
+                <td>45 кг</td>
+                <td>54,4  м<sup>3</sup></td>
+                <td>6 мест</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="order-info-services">
+        <div class="popup-left">
+          <div class="filled-field-group">
+            <div class="filled-field">
+              <div class="filled-field-title">Дополнительные услуги:</div>
+              <div class="content">
+                <ul>
+                  <li>Забор груза со склада</li>
+                  <li>Страхование груза (0,2% от стоимости груза)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="popup-right">
+          <div class="filled-field-group">
+            <div class="filled-field">
+              <div class="filled-field-title">Данные о транспорте:</div>
+              <div class="filled-field-description"><b>Номер авто:</b>ЕР234546РФ</div>
+              <div class="filled-field-description"><b>Название автотраспорта:</b>ПАЗ 3564</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript" src="js/libs.min.js"></script>
+<script type="text/javascript" src="js/common.js"></script>

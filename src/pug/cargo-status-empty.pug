@@ -1,0 +1,18 @@
+- var pageTitle = 'Статус груза'
+include includes/header-all
+
+section
+  .container
+    +breadcrumbs([pageTitle])
+
+    .section-title=pageTitle
+
+    p На этой странице Вы можете получить информацию о Вашем грузе
+
+    .box.cargo-status-box
+      form.cargo-status-search-form
+        input(type='text')
+        button
+      .cargo-status-empty
+        img(src=imgPath+'cargo-search-empty.png')
+include includes/footer

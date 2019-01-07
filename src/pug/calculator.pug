@@ -1,0 +1,49 @@
+- var pageTitle = 'Тарифный калькулятор'
+include includes/header-all
+
+section
+  .container
+    +breadcrumbs([pageTitle])
+
+    .section-title=pageTitle
+
+    .side-container.side-container-s
+      .box
+        .content
+          p.p-header Как рассчитать стоимость доставки
+          p В меню ниже выберите города  отправки и назначения.
+          p Примечание: для грузов весом более 700 кг стоимость доставки рассчитывается по индивидуальному запросу.
+
+          form.calc-form
+            .calc-progress
+              .calc-progress-point.calc-progress-from
+              .calc-progress-between
+              .calc-progress-point.calc-progress-to
+            .calc-inputs
+              +select(cities, 'Откуда', true)
+              +select(cities, 'Куда', true)
+              +input('Вес груза в кг')
+              +size-input()
+              +select(curencies, 'Валюта', false)
+            .clear
+            .button_calculate
+              +submit-button('Рассчитать')
+
+      .calc-draft
+        .calc-draft-button
+          a(class="button button_default") Сохранить в черновик
+        .calc-draft-notice Вы можете сохранить заполненные данные в этом калькуляторе в черновик, чтобы в будущем воспользоватсья уже указанной информацией для оформления заявки на доставку с Личного кабинета
+        .clear
+
+
+
+    .side-right.side-right-l
+      p.p-header Примечания и условия
+      p.p-title Наши тарифы включают:
+      +list(['доставку груза от склада до склада перевозчика в пунктах   отправки / назначения', 'обработку груза на консолидационном терминале', 'оформление товарно-транспортных документов', 'доставку груза до двери получателя (кроме г.Алматы)'])
+      p.p-title Наши тарифы включают:
+      +list(['доставку груза от склада до склада перевозчика в пунктах   отправки / назначения', 'обработку груза на консолидационном терминале', 'оформление товарно-транспортных документов', 'доставку груза до двери получателя (кроме г.Алматы)'])
+
+    .clear
+
+include includes/footer

@@ -84,6 +84,23 @@ header {
       }
     }
   }
+
+  .cargo-status-check-header {
+    width: 180px;
+    height: 60px;
+    transition: width @transition-duration;
+    overflow: hidden;
+  }
+
+  .csc-active {
+    .cargo-status-check-header {
+      width: 290px;
+    }
+  }
+
+  .cargo-status-check-header-inner {
+    width: 290px;
+  }
 }
 
 .header-cabinet {
@@ -411,40 +428,40 @@ header {
       width: 50%;
     }
   }
-  
-  .calc-progress {
-    float: left;
-    width: 25px;
-    margin-top: 20px;
 
-    .calc-progress-point {
-      width: 7px;
-      height: 7px;
-      border: 4px solid;
-      border-radius: 50%;
-    }
-
-    .calc-progress-from {
-      border-color: #colors[slider-dot];
-      background-color: #colors[hover-text];
-    }
-
-    .calc-progress-to {
-      border-color: #colors[static];
-      background-color: #colors[primary];
-    }
-
-    .calc-progress-between {
-      width: 1px;
-      height: 65px;
-      background-color: #colors[static];
-      margin-left: 7px;
-    }
-  }
-  
   .calc-form {
     float: left;
     width: 285px;
+  }
+}
+
+.calc-progress {
+  float: left;
+  width: 25px;
+  margin-top: 20px;
+
+  .calc-progress-point {
+    width: 7px;
+    height: 7px;
+    border: 4px solid;
+    border-radius: 50%;
+  }
+
+  .calc-progress-from {
+    border-color: #colors[slider-dot];
+    background-color: #colors[hover-text];
+  }
+
+  .calc-progress-to {
+    border-color: #colors[static];
+    background-color: #colors[primary];
+  }
+
+  .calc-progress-between {
+    width: 1px;
+    height: 65px;
+    background-color: #colors[static];
+    margin-left: 7px;
   }
 }
 
@@ -1182,7 +1199,7 @@ footer {
       font-size: 20px;
       margin-top: 45px;
     }
-    
+
     .price-list-block__price {
       float: left;
       width: 125px;
@@ -1192,7 +1209,7 @@ footer {
       font-weight: bold;
       color: #colors[button-primary];
     }
-    
+
     .price-list-block__button {
       float: right;
       margin-right: 30px;
@@ -1228,6 +1245,434 @@ footer {
   }
 }
 
+.calc-inputs {
+  float: left;
+  width: 580px;
+}
+
+.button_calculate {
+  width: 185px;
+}
+
+.calc-draft {
+  margin-top: 50px;
+  .calc-draft-button {
+    width: 200px;
+    float: left;
+  }
+  .calc-draft-notice {
+    width: 440px;
+    margin-left: 30px;
+    float: left;
+    font-size: 13px;
+  }
+}
+
+.step-form-cargos {
+  position: relative;
+  margin-bottom: 50px;
+  .add-cargo-button {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: -50px;
+    padding-right: 35px;
+    background: url("@{images-dir}plus.png") no-repeat 105px 50%;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .group {
+    margin: 0;
+  }
+  td {
+    padding: 5px;
+    vertical-align: middle;
+  }
+  .cargo-num {
+    font-weight: bold;
+    color: #colors[primary];
+  }
+  .cargo-name {
+    width: 189px;
+  }
+  .cargo-weight {
+    width: 100px;
+  }
+  .cargo-volume {
+    width: 75px;
+  }
+  .cargo-places {
+    width: 81px;
+  }
+  .cargo-delete-button {
+    padding: 0;
+    a {
+      cursor: pointer;
+      display: inline-block;
+      padding: 5px;
+      &.disabled {
+        opacity: .2;
+        cursor: default;
+      }
+    }
+  }
+}
+
+.confirmation-cargos {
+  td {
+    padding: 5px 7px;
+    vertical-align: bottom;
+  }
+  td:first-of-type {
+    font-weight: bold;
+    padding: 5px 0;
+  }
+}
+
+.confirmation-price {
+  color: #colors[hover-text];
+}
+
+.side-container {
+  .step-form-accept-button {
+    float: right;
+    width: 260px;
+    margin-right: 0;
+  }
+}
+
+.logout-button {
+  background: url("@{images-dir}cabinet-enter-dark.png") no-repeat 100% 50%;
+  float: right;
+  font-size: 14px;
+  font-weight: 400;
+  width: 70px;
+  display: block;
+}
+
+.box-left {
+  width: 520px;
+  float: left;
+}
+
+.box-right {
+  width: 450px;
+  margin-left: 100px;
+  float: left;
+}
+
+.box-block {
+  margin-bottom: 35px;
+}
+
+.cabinet-button {
+  width: 200px;
+}
+
+.box-inner {
+  min-height: 450px;
+}
+
+.about-news-checkbox {
+  margin-top: 95px;
+}
+
+.filters {
+  float: left;
+  & > * {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .filter-label {
+    color: #colors[primary];
+    font-weight: bold;
+  }
+  .filter {
+    border-bottom: 1px dashed #colors[grey];
+    cursor: pointer;
+    margin-left: 20px;
+    transition: @transition-duration;
+    &.active {
+      border-bottom: 0;
+      color: #colors[button-primary];
+    }
+  }
+  span {
+    margin: 0 10px;
+  }
+  .datepicker-group {
+    margin: 0 15px;
+    .datepicker-title {
+      display: none;
+    }
+    input {
+      padding: 0;
+    }
+  }
+}
+
+.date-filters {
+  margin-top: 30px;
+  .checkbox-group {
+    margin-top: 5px;
+  }
+}
+
+.orders-action-buttons {
+  float: right;
+  .orders-action-download {
+    background: url("@{images-dir}download.png") no-repeat 100% 50%;
+    width: 80px;
+  }
+  .orders-action-print {
+    background: url("@{images-dir}print.png") no-repeat 100% 50%;
+    width: 110px;
+    margin-left: 30px;
+  }
+  a {
+    display: inline-block;
+    line-height: 20px;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.orders-list {
+  width: 100%;
+  text-align: left;
+  vertical-align: middle;
+  margin-top: 25px;
+  th {
+    height: 24px;
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #colors[num];
+    background-color: #colors[content-bg];
+    padding-left: 15px;
+  }
+  tr:not(:first-of-type) {
+    height: 60px;
+    &:hover {
+      background: linear-gradient(to right, #colors[static], transparent);
+    }
+    td {
+      padding-left: 15px;
+      font-size: 12px;
+      border-bottom: 1px solid #colors[static];
+    }
+    .order-id {
+      font-size: 14px;
+    }
+    .order-action-buttons {
+      a {
+        margin-left: 15px;
+        cursor: pointer;
+        transition: @transition-duration;
+        &:hover {
+          opacity: .5;
+        }
+      }
+      .order-create {
+        text-decoration: underline;
+        font-size: 14px;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+    .order-bold {
+      font-weight: bold;
+    }
+    .order-on-way {
+      font-weight: bold;
+      color: #colors[button-primary];
+      a {
+        cursor: pointer;
+        &:hover {
+          opacity: .5;
+        }
+        img {
+          vertical-align: middle;
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+}
+
+.orders-notice {
+  width: 900px;
+  margin: 25px auto;
+  font-size: 13px;
+  font-style: italic;
+  display: none;
+  img {
+    vertical-align: middle;
+  }
+  .orders-notice-bulb {
+    margin-right: 15px;
+  }
+  .orders-notice-download {
+    margin-left: 15px;
+    opacity: .5;
+  }
+  .orders-notice-print {
+    margin-left: 15px;
+    opacity: .5;
+  }
+}
+
+.order-info-popup {
+  width: 830px;
+}
+.order-info {
+  .order-title {
+    float: left;
+    font-size: 20px;
+    margin-bottom: 30px;
+    span {
+      font-weight: bold;
+    }
+  }
+}
+
+.popup-left, .popup-right {
+  float: left;
+  width: 50%;
+  .order-field {
+    margin-bottom: 5px;
+    span {
+      font-weight: bold;
+      margin-right: 5px;
+    }
+    .order-info-price {
+      color: #colors[hover-text];
+      font-weight: 400;
+    }
+  }
+}
+
+.order-tracking {
+  background-color: #colors[content-bg];
+  padding: 15px 30px;
+  margin: 30px 0;
+  .order-tracking-progress {
+    margin-top: 20px;
+    position: relative;
+    width: 100%;
+    height: 25px;
+
+    .order-tracking-progress-point {
+      width: 13px;
+      height: 13px;
+      border: 6px solid;
+      border-radius: 50%;
+      position: absolute;
+      z-index: 1;
+    }
+
+    .order-tracking-progress-from {
+      border-color: #colors[slider-dot];
+      background-color: #colors[hover-text];
+      left: -10px;
+    }
+
+    .order-tracking-progress-to {
+      border-color: #colors[static];
+      background-color: #colors[primary];
+      right: -10px;
+    }
+
+    .order-tracking-progress-between {
+      height: 2px;
+      width: 100%;
+      background-color: #colors[static];
+      margin-top: 12px;
+      position: absolute;
+    }
+    .order-tracking-mark {
+      position: absolute;
+      top: -13px;
+      left: 30px;
+    }
+  }
+  .order-tracking-triplet > div {
+    width: 33.33%;
+    float: left;
+  }
+  .order-tracking-center {
+    text-align: center;
+  }
+  .order-tracking-right {
+    text-align: right;
+  }
+  .order-tracking-bottom {
+    color: #colors[primary];
+    margin-top: 10px;
+  }
+  .order-tracking-status {
+    font-size: 16px;
+    color: #colors[hover-text];
+  }
+}
+.order-info-services {
+  .filled-field-title {
+    margin-bottom: 15px;
+  }
+  .filled-field-description {
+    margin-bottom: 10px;
+    b {
+      margin-right: 5px;
+    }
+  }
+}
+
+.cargo-status-search-form {
+  position: relative;
+  input[type=text] {
+    border: 1px solid #colors[static];
+    height: 60px;
+    padding: 0 0 0 115px;
+    background: url("@{images-dir}cargo-search.png") no-repeat 0 50%;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+  button {
+    position: absolute;
+    height: 60px;
+    width: 50px;
+    background-color: transparent;
+    border: 0;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    display: block;
+    &:after {
+      content: '';
+      .arrow('right');
+      position: absolute;
+      border-color: #colors[hover-text];
+      top: 25px;
+      right: 20px;
+
+    }
+  }
+}
+
+.cargo-status-empty {
+  margin-top: 75px;
+  text-align: center;
+}
+
+.cargo-status-content {
+  margin-top: 50px;
+}
+
+.cargo-status-box {
+  padding: 50px;
+}
 
 @import "_mobile";
 @import "_media";

@@ -46,3 +46,114 @@ div(class='popup mfp-hide' id='forgot-complete-popup')
       span Новый пароль отправлен
     .form-notice Письмо с паролем отправленно на ваш E-mail. Если вы не получили письмо, пожайлусто подождите 3-10 минут. Если письмо так и не пришло вам, проверьте правильность указанного E-mail  адреса.
     .button.button_primary.button_popup-close Закрыть
+
+div(class='popup mfp-hide' id='order-delivery-complete-popup')
+  .box
+    .popup-title
+      img(src=imgPath + 'success-icon.png')
+      span Заказ на доставку оформлен
+    p Мы свяжемся с вами в ближайшее время для подтверждения доставки. Номер накладной и прочая информация будет отправлена на указанные E-mail адреса отправителя и получателя.
+    p Также через личный кабинет вы можете в режиме онлайн видеть состояние ваших отправлений и получений
+    p: a(href='') Личный кабинет
+    .button.button_primary.button_popup-close Закрыть
+
+div(class='popup mfp-hide order-info-popup' id='order-info-popup')
+  .box
+    .order-info
+      .order-title
+        span Информация о грузе:
+        | 24354623440
+      .orders-action-buttons
+        a(href='').orders-action-download Скачать
+        a(href='').orders-action-print Распечатать
+      .clear
+      .popup-left
+        .order-field
+          span Ваша роль:
+          | Отправитель
+        .order-field
+          span Дата отгрузки:
+          | 14.02.2018
+      .popup-right
+        .order-field
+          span Оплачивает услугу:
+          | Отправитель
+        .order-field
+          span Оплата за доставку:
+          span.order-info-price 2 450 руб
+      .clear
+      .order-tracking
+        .order-tracking-triplet
+          .order-tracking-left
+            b Отправка:
+            | 22.04.2018
+          .order-tracking-center
+            span.order-tracking-status Доставка формируется
+          .order-tracking-right
+            b Доставка:
+            | 22.04.2018
+        .clear
+        .order-tracking-progress
+          .order-tracking-mark: img(src=imgPath+'trucking-mark.png')
+          .order-tracking-progress-point.order-tracking-progress-from
+          .order-tracking-progress-point.order-tracking-progress-to
+          .order-tracking-progress-between
+        .order-tracking-triplet.order-tracking-bottom
+          .order-tracking-left: b г. Астана
+          .order-tracking-center: b в Пути
+          .order-tracking-right: b г. Москва
+        .clear
+      .popup-left
+        .filled-field-group
+          .filled-field
+            span.filled-field-title Данные отправителя:
+            .filled-field-description.filled-field-sender г . Астана, ООО "Белые-сады" пр. мира 10, офис 24 Горбунов Олексей, +7034-594-65-34, aleey@whiteg.ru
+          .filled-field
+            span.filled-field-title Загрузка:
+            span.filled-field-description.filled-field-sender-address г. Астана, пр. мира 10, офис 24
+      .popup-right
+        .filled-field-group
+          .filled-field
+            span.filled-field-title Данные получателя:
+            .filled-field-description.filled-field-receiver г . Москва, ООО "Белые-сады" пр. мира 10, офис 24 Дмитрий Белашов, +7034-594-65-34, aleey@whiteg.ru
+          .filled-field
+            span.filled-field-title Доставка:
+            span.filled-field-description.filled-field-receiver-address г. Москва, пр. мира 10, офис 24
+      .clear
+      hr
+      .filled-field-group.confirmation-cargos
+        .filled-field
+          .filled-field-title Груз:
+          .filled-field-cargos
+            table
+              tr
+                td 1:
+                td Наименование груза
+                td 45 кг
+                td 54,4  м<sup>3</sup>
+                td 6 мест
+              tr
+                td 2:
+                td Наименование груза
+                td 45 кг
+                td 54,4  м<sup>3</sup>
+                td 6 мест
+      hr
+      .order-info-services
+        .popup-left
+          .filled-field-group
+            .filled-field
+              .filled-field-title Дополнительные услуги:
+              .content
+                +list(['Забор груза со склада', 'Страхование груза (0,2% от стоимости груза)'])
+        .popup-right
+          .filled-field-group
+            .filled-field
+              .filled-field-title Данные о транспорте:
+              .filled-field-description
+                b Номер авто:
+                | ЕР234546РФ
+              .filled-field-description
+                b Название автотраспорта:
+                | ПАЗ 3564
+      .clear

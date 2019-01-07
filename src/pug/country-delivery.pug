@@ -25,26 +25,27 @@ section
           a(class='button button_default button_prev') Украина
           a(class='button button_default button_next') Белорусия
 
-    form(class='side-form side-form-s services-form')
-      .form-notice Стоимость доставки сборных грузов из Российской Федерации в Республику Казахстан Вы можете рассчитать самостоятельно, с помощью нашего
-        a(href='calculator.html')= ' тарифного калькулятора.'
+    .side-right.side-right-s
+      form.services-form
+        .form-notice Стоимость доставки сборных грузов из Российской Федерации в Республику Казахстан Вы можете рассчитать самостоятельно, с помощью нашего
+          a(href='calculator.html')= ' тарифного калькулятора.'
 
-      hr
+        hr
 
-      .form-header Онлайн-заявка
+        .form-header Онлайн-заявка
 
-      +radio('Вы', ['Отправитель', 'Получатель'], 'youare')
+        +radio('Вы', ['Отправитель', 'Получатель'], 'youare')
 
-      +date('Планируемая дата отгрузки:')
+        +date('Планируемая дата отгрузки:')
 
-      +submit-button('Продолжить оформление')
+        +submit-button('Продолжить оформление')
+  
+        hr.form-delimiter
 
-      hr.form-delimiter
+        .form-notice или оставить запрос на сайте, и мы сами свяжемся с Вами и сообщим стоимость доставки
 
-      .form-notice или оставить запрос на сайте, и мы сами свяжемся с Вами и сообщим стоимость доставки
-
-      .group
-        a(class='button button_default') Оставить запрос
+        .group
+          a(class='button button_default') Оставить запрос
 
     .clear
 

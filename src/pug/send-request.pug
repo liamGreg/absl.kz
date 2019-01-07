@@ -15,14 +15,14 @@ section
           +input('Название организации')
           +input('Контактное лицо')
           +input('E-mail')
-          +input('Город и страна отправления')
-          +input('Город и страна назначения')
+          +select(cities, 'Город отправления')
+          +select(cities, 'Город назначения')
 
         .form-right
           .form-title Информация о грузе
           +input('Наименование груза')
           +input('Вес (кг)')
-          +input('Объем (м3)')
+          +size-input()
           +textarea('Наименование груза')
         .clear
 

@@ -11,27 +11,144 @@ section
 
     .side-menu
       ul
+        li.active
+          .side-menu-num
+            span 1.
+          .side-menu-item: a Ваша роль и дата отгрузки
+        li
+          .side-menu-num
+            span 2.
+          .side-menu-item: a  Данные отправителя
+        li
+          .side-menu-num
+            span 3.
+          .side-menu-item: a  Данные получателя
+        li
+          .side-menu-num
+            span 4.
+          .side-menu-item: a  Описание груза и доп. услуги
         li
 
-    .side-container.side-container-s
+    .side-container.side-container-xs
       .box
         .content
-          p На данной странице Вы можете скачать образцы всех документов, необходимых для начала сотрудничества с нашей компанией.
-          p Для начала сотрудничества с нашей компанией, Вам необходимо заключить с нами Договор и подписать Заявку.
-          p Договор является генеральным и имеет неограниченный срок действия, достаточно подписать его только один раз.
-          p Заявка заполняется на каждую перевозку в отдельности.
+          form#order-delivery-form
+            .step-form
+              .step-form-content.step-form-content-1.active
+                .step-form-content-inner
+                  p.p-header Ваша роль и дата отгрузки
+                  +radio('Вы', {1:'Отправитель', 2:'Получатель'}, 'role', false, 'step-form-role')
+                  +date('Планируемая дата отгрузки:', 'step-form-date')
+                .floated-buttons
+                  a(class='button button_default button_prev button_disabled') Назад
+                  a(class='button button_default button_next') Далее
+              .step-form-content.step-form-content-2
+                .step-form-content-inner
+                  p.p-header Данные отправителя
+                  +select(cities, 'Город')
+                  +input('Название компании')
+                  +input('Адрес')
+                  +input('Контактное лицо')
+                  +input('Контактный телефон')
+                  +input('E-mail')
+                  +input('Адрес загрузки', 'step-form-sender-address')
+                .floated-buttons
+                  a(class='button button_default button_prev') Назад
+                  a(class='button button_default button_next') Далее
+              .step-form-content.step-form-content-3
+                .step-form-content-inner
+                  p.p-header Данные получателя
+                  +select(cities, 'Город')
+                  +input('Название компании')
+                  +input('Адрес')
+                  +input('Контактное лицо')
+                  +input('Контактный телефон')
+                  +input('E-mail')
+                  +input('Адрес доставки', 'step-form-receiver-address')
+                .floated-buttons
+                  a(class='button button_default button_prev') Назад
+                  a(class='button button_default button_next') Далее
+              .step-form-content.step-form-content-4
+                .step-form-content-inner
+                  p.p-header Описание груза
+                  .step-form-cargos
+                    a(class='add-cargo-button' href='') Добавить груз
+                    table
+                      tr
+                        td.cargo-num 1.
+                        td.cargo-name
+                          +input('Наименование', '', '', 'cargo[name][]')
+                        td.cargo-weight
+                          +input('Общий вес (кг)', '', '', 'cargo[weight][]')
+                        td.cargo-volume
+                          +input('Обьем (м<sup>3</sup>)', '', '', 'cargo[volume][]')
+                        td.cargo-places
+                          +input('Кол-во мест', '', '', 'cargo[places][]')
+                        td.cargo-delete-button
+                          a.disabled: img(src=imgPath + 'trash.png')
+                  hr
+                  p.p-header Дополнительные услуги
+                  .step-form-radios
+                    +radio('Забор груза со склада', {1:'Да',0:'Нет'}, 'take', true, '')
+                    +radio('Изготовление дополнительной упаковки:', {1:'Да',0:'Нет'}, 'packaging', true)
+                    +radio('Страхование груза (0,2% от стоимости груза):', {1:'Да',0:'Нет'}, 'insurance', true)
+                  hr
+                  +select({1:'Отправитель', 2:'Получатель'}, 'Оплачивает услугу', false, 'step-form-buyer')
+                .floated-buttons
+                  a(class='button button_default button_prev') Назад
+                  a(class='button button_default button_next' id='to-confirmation-step') Далее
+              .step-form-content.step-form-content-5
+                .step-form-content-inner
+                  p.p-header Подтверждение заполненной информации
+                  .filled-fields-confirmation
+                  hr
+                  .filled-field-group.confirmation-cargos
+                    .filled-field
+                      .filled-field-title Груз:
+                      .filled-field-cargos
+                  hr
+                  .filled-field-group
+                    .filled-field
+                      .filled-field-title Дополнительные услуги:
+                      .filled-field-services
+                        ul
+                  .filled-field-group
+                    .filled-field
+                      span.filled-field-title Оплачивает услугу:
+                      span.filled-field-description.confirmation-buyer
+                    .filled-field
+                      span.filled-field-title Оплата за доставку:
+                      span.filled-field-description.confirmation-price 2 450 руб
+                .floated-buttons
+                  a(class='button button_default button_prev') Назад
+                  button(class='button button_primary step-form-accept-button') Подтвердить и отправить
 
-        ul.download-documents
-          li
-            img(src=imgPath + 'document.png')
-            a(href='') Скачать Заявку
-            span (для направлений Россия - Казахстан)
-          li
-            img(src=imgPath + 'document.png')
-            a(href='') Скачать прайс-лист
-            span (на ответ.хранение грузов в тенге)
 
-    .side-form.side-form-s
+    .side-right.side-right-s
+      p.p-header Заполненная информация
+      .filled-fields
+        .filled-field-group
+          .filled-field
+            span.filled-field-title Ваша роль:
+            span.filled-field-description.filled-field-role -
+          .filled-field
+            span.filled-field-title Дата отгрузки:
+            span.filled-field-description.filled-field-step-date -
+        .filled-field-group
+          .filled-field
+            span.filled-field-title Данные отправителя:
+            span.filled-field-description.filled-field-sender -
+          .filled-field
+            span.filled-field-title Загрузка:
+            span.filled-field-description.filled-field-sender-address -
+        .filled-field-group
+          .filled-field
+            span.filled-field-title Данные получателя:
+            span.filled-field-description.filled-field-receiver -
+          .filled-field
+            span.filled-field-title Доставка:
+            span.filled-field-description.filled-field-receiver-address -
+      hr
 
     .clear
 

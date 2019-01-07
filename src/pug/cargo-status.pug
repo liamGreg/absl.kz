@@ -1,0 +1,83 @@
+- var pageTitle = 'Статус груза'
+include includes/header-all
+
+section
+  .container
+    +breadcrumbs([pageTitle])
+
+    .section-title=pageTitle
+
+    p На этой странице Вы можете получить информацию о Вашем грузе
+
+    .box.cargo-status-box
+      form.cargo-status-search-form
+        input(type='text' value='24354623440')
+        button
+      .cargo-status-content
+        .order-info
+          .order-title
+            span Информация о грузе:
+            | 24354623440
+          .clear
+          .popup-left
+            .order-field
+              span Ваша роль:
+              | Отправитель
+            .order-field
+              span Дата отгрузки:
+              | 14.02.2018
+          .popup-right
+            .order-field
+              span Оплачивает услугу:
+              | Отправитель
+            .order-field
+              span Оплата за доставку:
+              span.order-info-price 2 450 руб
+          .clear
+          .order-tracking
+            .order-tracking-triplet
+              .order-tracking-left
+                b Отправка:
+                | 22.04.2018
+              .order-tracking-center
+                span.order-tracking-status Доставка формируется
+              .order-tracking-right
+                b Доставка:
+                | 22.04.2018
+            .clear
+            .order-tracking-progress
+              .order-tracking-mark: img(src=imgPath + 'trucking-mark.png')
+              .order-tracking-progress-point.order-tracking-progress-from
+              .order-tracking-progress-point.order-tracking-progress-to
+              .order-tracking-progress-between
+            .order-tracking-triplet.order-tracking-bottom
+              .order-tracking-left: b г. Астана
+              .order-tracking-center: b в Пути
+              .order-tracking-right: b г. Москва
+            .clear
+          .popup-left
+            .filled-field-group
+              .filled-field
+                span.filled-field-title Данные отправителя:
+                .filled-field-description.filled-field-sender г . Астана, ООО "Белые-сады" пр. мира 10, офис 24 Горбунов Олексей, +7034-594-65-34, aleey@whiteg.ru
+              .filled-field
+                span.filled-field-title Загрузка:
+                span.filled-field-description.filled-field-sender-address г. Астана, пр. мира 10, офис 24
+          .popup-right
+            .filled-field-group
+              .filled-field
+                span.filled-field-title Данные получателя:
+                .filled-field-description.filled-field-receiver г . Москва, ООО "Белые-сады" пр. мира 10, офис 24 Дмитрий Белашов, +7034-594-65-34, aleey@whiteg.ru
+              .filled-field
+                span.filled-field-title Доставка:
+                span.filled-field-description.filled-field-receiver-address г. Москва, пр. мира 10, офис 24
+          .clear
+
+    .notice-block
+      .notice-block-text Для получения более детальной информации зарегестрируйтесь на сайте, это позволит вам получать и контролировать детальней ваши заявки и отправления
+      .notice-block-button
+        a.button.button_primary.popup-button(href='#signin-popup') Регистрация
+      .clear
+
+
+include includes/footer
